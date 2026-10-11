@@ -25,7 +25,7 @@ Versions follow [Semantic Versioning](https://semver.org/):
 ## One-time setup
 
 1. **npm account and scope.** The scope `@zied-snoussi` must belong to you on npm: either your npm username is `zied-snoussi`, or you create a free organization named `zied-snoussi` (npmjs.com → Add Organization).
-2. **Token.** npmjs.com → Access Tokens → Generate New Token → *Granular Access Token*: permission **Read and write**, packages: `@zied-snoussi/ui` (or the whole scope), enable *Bypass 2FA* for automation, expiry 1 year.
+2. **Token.** npmjs.com → Access Tokens → Generate New Token → *Granular Access Token*: Packages and scopes permission **Read and write**, select **All packages** for the first publish (a package that does not exist yet cannot be selected; narrow it to `@zied-snoussi/ui` later), Organizations: the `zied-snoussi` org if you created one, enable *Bypass 2FA*, expiry 1 year. The token starts with `npm_`. **Your npm password is not a token and will be rejected.**
 3. **Secret.** Save it in the repository as `NPM_TOKEN`:
 
    ```bash
@@ -36,6 +36,18 @@ Versions follow [Semantic Versioning](https://semver.org/):
 4. **Actions permissions.** Settings → Actions → General → *Workflow permissions*: allow GitHub Actions to create and approve pull requests (needed for the version PR).
 
 Without `NPM_TOKEN`, the workflow still versions and opens PRs but skips publishing (a warning appears in the run).
+
+### Troubleshooting
+
+The Release workflow checks the token before publishing (step *Check npm account and scope*):
+
+| Error | Cause | Fix |
+|---|---|---|
+| `NPM_TOKEN is invalid or expired (npm whoami failed)` | the secret is not a valid npm token (for example a password) or it expired | create a new granular token, `gh secret set NPM_TOKEN -R zied-snoussi/zied-ui` |
+| `The token belongs to npm user 'X', who does not own the @zied-snoussi scope` | scope not owned by the token's account | create the `zied-snoussi` org on npm, or rename the package to `@X/ui` |
+| `E404 Not Found - PUT …/@zied-snoussi%2fui` | token has no write access to that scope | regenerate with **All packages** + Read and write |
+| `E403 … two-factor authentication` | 2FA required | enable *Bypass 2FA* on the token |
+| No "chore: version packages" PR | Actions cannot create PRs | step 4 above |
 
 ## Manual release (fallback)
 
