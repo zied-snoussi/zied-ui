@@ -13,6 +13,7 @@ permissions:
   contents: write       # tags and GitHub Releases
   pull-requests: write  # "chore: version packages" PR
   id-token: write       # npm provenance (signed build attestation)
+  actions: write        # start the Storybook deploy after a release
 
 jobs:
   release:
@@ -65,15 +66,46 @@ jobs:
           publish: ${{ steps.npm.outputs.has_token == 'true' && 'pnpm release' || '' }}
           title: 'chore: version packages'
           commit: 'chore: version packages'
-          createGithubReleases: true
+          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'
+      # changesets/action does not read the Changesets 3 publish output, so it
+      # skips tags and GitHub Releases. Create them here when the version in
+      # package.json is on npm but has no release yet.
+      - name: Tag, GitHub Release and Storybook deploy
+        id: gh_release
+        if: steps.npm.outputs.has_token == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+          if ! npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "$NAME@$VERSION is not on npm: nothing to release."
+            exit 0
+          fi
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "$TAG already released."
+            exit 0
+          fi
+          awk -v v="$VERSION" '$0 == "## " v {f=1; next} /^## /{f=0} f' CHANGELOG.md > notes.md
+          {
+            echo
+            echo "### Links"
+            echo
+            echo "- npm: https://www.npmjs.com/package/$NAME/v/$VERSION"
+            echo "- Storybook: https://zied-snoussi.github.io/zied-ui/"
+            echo "- MCP server: https://zied-ui-mcp.vercel.app/mcp"
+          } >> notes.md
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "$TAG" --notes-file notes.md --latest
+          gh workflow run storybook.yml --ref main
+          echo "released=true" >> "$GITHUB_OUTPUT"
       - name: Summary
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.gh_release.outputs.released == 'true'
         run: |
           echo "### Published to npm" >> "$GITHUB_STEP_SUMMARY"
-          echo '${{ steps.changesets.outputs.publishedPackages }}' >> "$GITHUB_STEP_SUMMARY"
           echo "https://www.npmjs.com/package/@zied-snoussi/ui" >> "$GITHUB_STEP_SUMMARY"
