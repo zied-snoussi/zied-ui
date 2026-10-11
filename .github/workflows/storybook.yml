@@ -1,13 +1,12 @@
 name: Storybook (GitHub Pages)
 
-# Deploys the static Storybook to GitHub Pages.
-# Enable it once in Settings → Pages → Source: GitHub Actions.
-# The site is public. It runs on every published release and on demand.
+# Deploys the static Storybook to GitHub Pages (public).
+# The Release workflow starts it on main after each npm release; it can also
+# be run by hand. The github-pages environment only accepts deploys from main,
+# so it is not triggered by release/tag events.
 
 on:
   workflow_dispatch:
-  release:
-    types: [published]
 
 permissions:
   contents: read

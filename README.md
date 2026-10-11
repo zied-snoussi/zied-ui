@@ -203,8 +203,8 @@ Details: [docs/RELEASING.md](docs/RELEASING.md).
 | Workflow | Trigger | Jobs |
 |---|---|---|
 | `ci.yml` | Pull requests, pushes to `main` | Typecheck & lint · story tests with coverage (Chromium) · library build, package check and smoke test · Storybook build · artifacts |
-| `release.yml` | Pushes to `main` | Changesets: version PR, or publish to npm (provenance) + GitHub Release |
-| `storybook.yml` | Manual / releases | Builds Storybook and deploys it to GitHub Pages (enable Pages first) |
+| `release.yml` | Pushes to `main` | Changesets: version PR, or publish to npm (provenance) + tag, GitHub Release and Storybook deploy |
+| `storybook.yml` | After each release (started by `release.yml`) / manual | Builds Storybook and deploys it to https://zied-snoussi.github.io/zied-ui/ |
 
 ## Documentation
 
