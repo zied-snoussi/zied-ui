@@ -12,6 +12,7 @@ This file is the source of truth for any agent working in this repository (Claud
 |---|---|
 | Install | `pnpm install` (pnpm 10, Node 22) |
 | Storybook + MCP server | `pnpm storybook` → http://localhost:6006, MCP at http://localhost:6006/mcp |
+| Public Storybook / MCP | https://zied-snoussi.github.io/zied-ui/ · https://zied-ui-mcp.vercel.app/mcp |
 | All story tests (render, interactions, a11y) | `pnpm test` |
 | One file | `pnpm exec vitest run src/components/ui/button.stories.tsx` |
 | Types / lint | `pnpm typecheck` · `pnpm lint` |
@@ -21,7 +22,8 @@ This file is the source of truth for any agent working in this repository (Claud
 
 ## MCP servers (use them before reading files by hand)
 
-- **storybook** (`.mcp.json`, needs `pnpm storybook` running):
+- **storybook** (public, https://zied-ui-mcp.vercel.app/mcp): docs tools only (`docs-list`, `docs-show`, `docs-show-story`) for the released Storybook. Always available.
+- **storybook-dev** (`.mcp.json`, needs `pnpm storybook` running), for work on this repo:
   - `docs-list` / `docs-show` / `docs-show-story`: read a component's props, stories and usage before changing or using it.
   - `get-storybook-story-instructions`: call it **before writing or editing any story**.
   - `stories-find-by-component`: find the stories for a component file.

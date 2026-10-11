@@ -2,6 +2,10 @@
   "mcpServers": {
     "storybook": {
       "type": "http",
+      "url": "https://zied-ui-mcp.vercel.app/mcp"
+    },
+    "storybook-dev": {
+      "type": "http",
       "url": "http://localhost:6006/mcp"
     },
     "shadcn": {

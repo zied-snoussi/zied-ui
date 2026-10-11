@@ -6,16 +6,30 @@ The repository is set up so an AI coding agent (Claude Code, Cursor, VS Code Cop
 
 | File | For | Servers |
 |---|---|---|
-| `.mcp.json` | Claude Code | `storybook` (HTTP), `shadcn` (stdio) |
+| `.mcp.json` | Claude Code | `storybook` (public HTTP), `storybook-dev` (local HTTP), `shadcn` (stdio) |
 | `.cursor/mcp.json` | Cursor | same |
 | `.vscode/mcp.json` | VS Code (Copilot agent mode) | same |
 | `AGENTS.md` | every agent | project rules |
 | `CLAUDE.md` | Claude Code | imports `AGENTS.md` + skills list |
 | `.claude/skills/*` | Claude Code | `add-component`, `write-stories`, `fix-a11y`, `release` |
 
-### Storybook MCP server
+### Public Storybook MCP server
 
-Provided by `@storybook/addon-mcp`, served by the Storybook dev server at **http://localhost:6006/mcp**.
+**https://zied-ui-mcp.vercel.app/mcp**: always on, no setup. It serves the docs toolset (`docs-list`, `docs-show`, `docs-show-story`) for the Storybook published on GitHub Pages (https://zied-snoussi.github.io/zied-ui/).
+
+GitHub Pages only hosts static files, so the server runs as a small Vercel function (`mcp/`, Vercel project `zied-ui-mcp`, root directory `mcp`). It reads `manifests/components.json` and `manifests/docs.json` that every Storybook build publishes, so it updates itself each time Storybook is redeployed. Set `STORYBOOK_URL` on the Vercel project to point it at another Storybook.
+
+Add it to any project that uses the library:
+
+```bash
+claude mcp add --transport http zied-ui https://zied-ui-mcp.vercel.app/mcp
+```
+
+Cursor / VS Code: add an HTTP server with that URL.
+
+### Local Storybook MCP server (`storybook-dev`)
+
+Provided by `@storybook/addon-mcp`, served by the Storybook dev server at **http://localhost:6006/mcp**. Use it when working on this repo: it sees your unreleased changes and adds tests and previews.
 
 | Tool | Use it to |
 |---|---|
@@ -36,7 +50,7 @@ Provided by `@storybook/addon-mcp`, served by the Storybook dev server at **http
 
 ```bash
 pnpm install
-pnpm storybook          # keep it running: it hosts the Storybook MCP server
+pnpm storybook          # keep it running: it hosts the storybook-dev MCP server
 ```
 
 - **Claude Code:** open the repo, run `claude`, approve the two project MCP servers (`/mcp` shows their status).

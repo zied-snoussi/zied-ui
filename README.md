@@ -171,11 +171,18 @@ pnpm test:coverage    # with coverage report
 
 ## AI agents and MCP
 
-Run `pnpm storybook`, then open the repo in Claude Code, Cursor or VS Code: the MCP servers are preconfigured (`.mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`).
+Open the repo in Claude Code, Cursor or VS Code: the MCP servers are preconfigured (`.mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`). The public `storybook` server works with nothing running; `storybook-dev` needs `pnpm storybook`.
+
+Use the public server in **any** project that consumes the library:
+
+```bash
+claude mcp add --transport http zied-ui https://zied-ui-mcp.vercel.app/mcp
+```
 
 | Server | What agents can do |
 |---|---|
-| `storybook` (http://localhost:6006/mcp) | read component docs and stories, get story-writing instructions, run tests, get preview URLs |
+| `storybook` (https://zied-ui-mcp.vercel.app/mcp) | public, always on: list components, read props, stories and docs of the published Storybook (https://zied-snoussi.github.io/zied-ui/) |
+| `storybook-dev` (http://localhost:6006/mcp) | while `pnpm storybook` runs: docs of your local changes, story-writing instructions, run tests, preview URLs |
 | `shadcn` | browse and add shadcn/ui primitives |
 
 Rules for agents: [AGENTS.md](AGENTS.md) (imported by [CLAUDE.md](CLAUDE.md)). Claude Code skills in `.claude/skills/`: `add-component`, `write-stories`, `fix-a11y`, `release`. Guide: [docs/AI-WORKFLOW.md](docs/AI-WORKFLOW.md).

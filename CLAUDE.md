@@ -4,7 +4,7 @@
 
 ## Claude Code specifics
 
-- MCP servers are declared in `.mcp.json` (storybook, shadcn). Start `pnpm storybook` first so the Storybook MCP server is reachable at http://localhost:6006/mcp. Approve the project servers when Claude Code asks.
+- MCP servers are declared in `.mcp.json`: `storybook` (public, https://zied-ui-mcp.vercel.app/mcp, docs of the released Storybook), `storybook-dev` (http://localhost:6006/mcp, start `pnpm storybook` first; adds tests and previews) and `shadcn`. Approve the project servers when Claude Code asks.
 - Project skills live in `.claude/skills/`:
   - `add-component`: create a component with its story, tests, export and docs.
   - `write-stories`: write or improve stories and `play` interaction tests.
