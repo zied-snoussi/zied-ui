@@ -10,6 +10,8 @@ const config: StorybookConfig = {
     { name: '@storybook/addon-docs', options: { mdxPluginOptions: { mdxCompileOptions: { remarkPlugins: [remarkGfm] } } } },
     '@storybook/addon-a11y',
     '@storybook/addon-themes',
+    '@storybook/addon-vitest',
+    '@storybook/addon-mcp',
   ],
   staticDirs: ['../public'],
   docs: { defaultName: 'Docs' },

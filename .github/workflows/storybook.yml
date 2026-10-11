@@ -2,8 +2,7 @@ name: Storybook (GitHub Pages)
 
 # Deploys the static Storybook to GitHub Pages.
 # Enable it once in Settings → Pages → Source: GitHub Actions.
-# Pages on a private repository requires a paid plan; the site URL is public unless
-# you restrict it (GitHub Enterprise), so keep this manual.
+# The site is public. It runs on every published release and on demand.
 
 on:
   workflow_dispatch:
@@ -24,16 +23,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build-storybook --quiet
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: storybook-static
 
@@ -45,4 +44,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

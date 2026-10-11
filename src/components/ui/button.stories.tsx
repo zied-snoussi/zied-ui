@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, fn, userEvent, within } from 'storybook/test';
 import { ArrowRight, Download, Github } from 'lucide-react';
 import { Button } from './button';
 
@@ -12,12 +13,17 @@ const meta = {
     variant: { control: 'select', options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'] },
     size: { control: 'select', options: ['default', 'sm', 'lg', 'icon'] },
   },
-  args: { children: 'View projects', variant: 'default', size: 'default' },
+  args: { children: 'View projects', variant: 'default', size: 'default', onClick: fn() },
 } satisfies Meta<typeof Button>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  play: async ({ canvasElement, args }) => {
+    await userEvent.click(within(canvasElement).getByRole('button', { name: 'View projects' }));
+    await expect(args.onClick).toHaveBeenCalledOnce();
+  },
+};
 
 export const Variants: Story = {
   render: (args) => (
@@ -59,4 +65,12 @@ export const AsLink: Story = {
   ),
 };
 
-export const Disabled: Story = { args: { disabled: true, children: 'Sending…' } };
+export const Disabled: Story = {
+  args: { disabled: true, children: 'Sending…' },
+  play: async ({ canvasElement, args }) => {
+    const button = within(canvasElement).getByRole('button', { name: 'Sending…' });
+    await expect(button).toBeDisabled();
+    await userEvent.click(button, { pointerEventsCheck: 0 });
+    await expect(args.onClick).not.toHaveBeenCalled();
+  },
+};

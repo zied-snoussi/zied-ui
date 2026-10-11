@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, within } from 'storybook/test';
 import { Avatar, AvatarFallback, AvatarImage } from './avatar';
 
 const meta = {
@@ -25,4 +26,7 @@ export const Fallback: Story = {
       <AvatarFallback>ZS</AvatarFallback>
     </Avatar>
   ),
+  play: async ({ canvasElement }) => {
+    await expect(await within(canvasElement).findByText('ZS')).toBeVisible();
+  },
 };

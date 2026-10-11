@@ -10,42 +10,55 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
-  packages: write
-  pull-requests: write
+  contents: write       # tags and GitHub Releases
+  pull-requests: write  # "chore: version packages" PR
+  id-token: write       # npm provenance (signed build attestation)
 
 jobs:
   release:
-    name: Version PR or publish
+    name: Version PR or publish to npm
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: pnpm
-          registry-url: https://npm.pkg.github.com
-          scope: '@zied-snoussi'
+          registry-url: https://registry.npmjs.org
       - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
-      - name: Create version PR or publish to GitHub Packages
+      - name: Check npm token
+        id: npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "::warning::NPM_TOKEN secret is missing: versioning still works, publishing is skipped. See docs/RELEASING.md."
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create version PR or publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           version: pnpm version-packages
-          publish: pnpm release
+          publish: ${{ steps.npm.outputs.has_token == 'true' && 'pnpm release' || '' }}
           title: 'chore: version packages'
           commit: 'chore: version packages'
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
       - name: Summary
         if: steps.changesets.outputs.published == 'true'
         run: |
-          echo "### Published" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Published to npm" >> "$GITHUB_STEP_SUMMARY"
           echo '${{ steps.changesets.outputs.publishedPackages }}' >> "$GITHUB_STEP_SUMMARY"
+          echo "https://www.npmjs.com/package/@zied-snoussi/ui" >> "$GITHUB_STEP_SUMMARY"

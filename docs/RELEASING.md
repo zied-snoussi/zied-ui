@@ -20,19 +20,29 @@ Versions follow [Semantic Versioning](https://semver.org/):
 `.github/workflows/release.yml` runs on every push to `main` with [changesets/action](https://github.com/changesets/action):
 
 - **Pending changesets:** it opens or updates a pull request named **"chore: version packages"**. That PR bumps `package.json` and writes `CHANGELOG.md`.
-- **No pending changesets** (the version PR was just merged): it runs `pnpm release` (`pnpm build && changeset publish`), which publishes to GitHub Packages, pushes the `v<version>` tag and creates the GitHub Release with the changelog entry.
+- **No pending changesets** (the version PR was just merged, or a version is not on npm yet): it runs `pnpm release` (`pnpm build && changeset publish`). That publishes `@zied-snoussi/ui` to [npmjs.com](https://www.npmjs.com/package/@zied-snoussi/ui) with **provenance**, pushes the `v<version>` tag and creates the GitHub Release.
 
-## Tokens and permissions
+## One-time setup
 
-- Publishing uses the workflow's `GITHUB_TOKEN` with `packages: write`, `contents: write` and `pull-requests: write`. No extra secret is needed.
-- In **Settings → Actions → General**, allow GitHub Actions to create and approve pull requests (needed for the version PR).
+1. **npm account and scope.** The scope `@zied-snoussi` must belong to you on npm: either your npm username is `zied-snoussi`, or you create a free organization named `zied-snoussi` (npmjs.com → Add Organization).
+2. **Token.** npmjs.com → Access Tokens → Generate New Token → *Granular Access Token*: permission **Read and write**, packages: `@zied-snoussi/ui` (or the whole scope), enable *Bypass 2FA* for automation, expiry 1 year.
+3. **Secret.** Save it in the repository as `NPM_TOKEN`:
+
+   ```bash
+   gh secret set NPM_TOKEN -R zied-snoussi/zied-ui
+   ```
+
+   (paste the token when prompted; it is never stored in the repo).
+4. **Actions permissions.** Settings → Actions → General → *Workflow permissions*: allow GitHub Actions to create and approve pull requests (needed for the version PR).
+
+Without `NPM_TOKEN`, the workflow still versions and opens PRs but skips publishing (a warning appears in the run).
 
 ## Manual release (fallback)
 
 ```bash
 pnpm changeset version     # bump + changelog
 git commit -am "chore: version packages"
-export NODE_AUTH_TOKEN=ghp_xxx   # token with write:packages
+npm login                  # once, as the owner of the @zied-snoussi scope
 pnpm release
 git push --follow-tags
 ```

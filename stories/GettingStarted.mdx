@@ -4,20 +4,9 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Getting started
 
-The package is published privately on **GitHub Packages** as `@zied-snoussi/ui`.
+The package is published on [npm](https://www.npmjs.com/package/@zied-snoussi/ui) as `@zied-snoussi/ui` (MIT).
 
-## 1. Authenticate to GitHub Packages
-
-Create a GitHub personal access token (classic) with the `read:packages` scope, then add an `.npmrc` next to your app's `package.json`:
-
-```ini
-@zied-snoussi:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-Export the token in your shell (`GITHUB_TOKEN=ghp_...`) or set it as a CI secret. Never commit the token.
-
-## 2. Install
+## 1. Install
 
 ```bash
 pnpm add @zied-snoussi/ui
@@ -27,7 +16,7 @@ pnpm add react react-dom
 pnpm add next next-intl next-themes
 ```
 
-## 3. Add the styles (Tailwind CSS v4)
+## 2. Add the styles (Tailwind CSS v4)
 
 In your global stylesheet, import Tailwind first, then the theme. The theme file contains the design tokens (light and dark) and tells Tailwind to scan the package's compiled classes.
 
@@ -38,7 +27,7 @@ In your global stylesheet, import Tailwind first, then the theme. The theme file
 
 Fonts: the tokens expect `--font-inter` and `--font-jetbrains-mono`. In Next.js, load them with `next/font/google` and set the `variable` option to those names.
 
-## 4. Use the components
+## 3. Use the components
 
 ```tsx
 import { Button, Card, CardContent, Badge } from '@zied-snoussi/ui';
@@ -59,7 +48,7 @@ export function Hero() {
 }
 ```
 
-## 5. Next.js components (`@zied-snoussi/ui/next`)
+## 4. Next.js components (`@zied-snoussi/ui/next`)
 
 These components use next-intl for their labels and next-themes for the theme toggle.
 

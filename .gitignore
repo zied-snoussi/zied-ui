@@ -5,3 +5,5 @@ storybook-static/
 .env*
 !.env.example
 *.tsbuildinfo
+coverage/
+__screenshots__/

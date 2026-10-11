@@ -10,6 +10,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  parameters: { a11y: { test: 'todo' } }, // known issue, see docs/ACCESSIBILITY.md
   render: () => (
     <ScrollArea className="h-48 w-64 rounded-md border p-4 text-sm">
       {Array.from({ length: 30 }, (_, i) => (

@@ -77,7 +77,7 @@ const preview: Preview = {
     nextjs: { appDirectory: true, navigation: { pathname: '/en', segments: [['locale', 'en']] } },
     layout: 'padded',
     controls: { expanded: true, matchers: { color: /(background|color)$/i, date: /Date$/i } },
-    a11y: { test: 'todo' },
+    a11y: { test: 'error' },
     options: {
       storySort: {
         order: ['Introduction', 'Getting Started', 'Foundations', 'UI', 'Effects', 'Shared', 'Layout', 'Features', 'Sections', 'Pages'],
