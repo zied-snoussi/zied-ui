@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The component system behind zied-snoussi.vercel.app: UI primitives, visual effects, layout, features and page sections, documented in Storybook.",
   "author": "Zied Snoussi <zied.alsnoussi@gmail.com> (https://zied-snoussi.vercel.app)",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.12.1",
   "engines": {
@@ -57,8 +57,8 @@
     "LICENSE"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",

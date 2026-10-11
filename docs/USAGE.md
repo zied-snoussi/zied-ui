@@ -1,19 +1,6 @@
 # Using `@zied-snoussi/ui` in a project
 
-## 1. Registry access
-
-The package lives on GitHub Packages (private). Create a token (classic) with `read:packages`, then add `.npmrc` to the consuming project:
-
-```ini
-@zied-snoussi:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-- Locally: `export GITHUB_TOKEN=ghp_xxx` (or `setx GITHUB_TOKEN ghp_xxx` on Windows).
-- Vercel: add `GITHUB_TOKEN` as an environment variable (Build).
-- GitHub Actions in another repo: use a token secret with `read:packages`; `secrets.GITHUB_TOKEN` only works inside this repository.
-
-## 2. Install
+## 1. Install
 
 ```bash
 pnpm add @zied-snoussi/ui
@@ -24,7 +11,7 @@ pnpm add @zied-snoussi/ui
 | `@zied-snoussi/ui`, `@zied-snoussi/ui/effects` | `react@19 react-dom@19`, `tailwindcss@4` |
 | `@zied-snoussi/ui/next` | the above + `next@16 next-intl@4 next-themes@0.4` |
 
-## 3. Styles
+## 2. Styles
 
 ```css
 /* app/globals.css */
@@ -43,7 +30,7 @@ const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mo
 
 Plain React (Vite): load Inter and JetBrains Mono from Google Fonts and set the two variables on `:root`.
 
-## 4. Primitives and effects (any React app)
+## 3. Primitives and effects (any React app)
 
 ```tsx
 import { Button, Dialog, DialogContent, DialogTrigger, DialogTitle } from '@zied-snoussi/ui';
@@ -54,7 +41,7 @@ import { Particles, SectionHeading } from '@zied-snoussi/ui/effects';
 </div>
 ```
 
-## 5. Next.js components
+## 4. Next.js components
 
 ```tsx
 // app/[locale]/layout.tsx
@@ -101,7 +88,6 @@ const messages = { ...uiMessages, ...(await import(`../messages/${locale}.json`)
 
 | Problem | Fix |
 |---|---|
-| `401 Unauthorized` on install | Check the token scope (`read:packages`) and the `.npmrc` scope line. |
 | Components have no styles | Import `theme.css` **after** `@import "tailwindcss"`; restart the dev server. |
 | `MISSING_MESSAGE` from next-intl | Merge `@zied-snoussi/ui/messages/<locale>.json` into your messages. |
 | Theme toggle does nothing | Wrap the app in `ThemeProvider attribute="class"`. |

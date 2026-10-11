@@ -4,7 +4,7 @@
 
 1. Keep the components **identical** to the ones running on zied-snoussi.vercel.app: they were copied from the portfolio repository, not rewritten.
 2. Document every component in Storybook, with the real providers (next-intl, next-themes, Next.js router).
-3. Publish the reusable part as a private, versioned npm package.
+3. Publish the reusable part as a public, versioned npm package (MIT).
 
 ## Layers
 
@@ -74,5 +74,5 @@ Sections and the data they read are excluded from the build (`tsconfig.build.jso
 | Storybook for Next.js | Most components use next-intl, next/image and the Next router; a plain React Storybook would need rewrites. |
 | Sections not published | They are portfolio content. Publishing them would ship personal data in a package. |
 | ESM only | CommonJS output cannot carry `"use client"`; Next.js and Vite both consume ESM. |
-| GitHub Packages, restricted | The repository is private; the package stays private to the account. |
+| Public npm, MIT, provenance | Anyone can install it without a token; provenance proves each version was built by this repository's CI. |
 | Changesets | Release notes are written with the change, versioning and publishing are automated. |

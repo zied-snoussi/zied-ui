@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/zied-snoussi/zied-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/zied-snoussi/zied-ui/actions/workflows/ci.yml)
 [![Release](https://github.com/zied-snoussi/zied-ui/actions/workflows/release.yml/badge.svg)](https://github.com/zied-snoussi/zied-ui/actions/workflows/release.yml)
+[![npm](https://img.shields.io/npm/v/@zied-snoussi/ui?logo=npm)](https://www.npmjs.com/package/@zied-snoussi/ui)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs)
 ![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss&logoColor=white)
@@ -9,7 +11,7 @@
 
 The component system behind **[zied-snoussi.vercel.app](https://zied-snoussi.vercel.app)**: UI primitives, visual effects, layout, features and page sections, extracted from the portfolio into a typed, documented and versioned library with a full Storybook.
 
-- **Package:** `@zied-snoussi/ui`, published privately on GitHub Packages (ESM, TypeScript declarations, `"use client"` on every module).
+- **Package:** `@zied-snoussi/ui`, published on [npm](https://www.npmjs.com/package/@zied-snoussi/ui) (ESM, TypeScript declarations, `"use client"` on every module).
 - **Storybook:** every component with controls, docs, accessibility checks, light/dark themes and EN / FR / AR (RTL).
 - **Releases:** automated with Changesets (semantic versioning, changelog, GitHub Releases).
 
@@ -40,22 +42,10 @@ The component system behind **[zied-snoussi.vercel.app](https://zied-snoussi.ver
 
 ## Install in a project
 
-The package is private and hosted on GitHub Packages.
-
-1. Create a GitHub token (classic) with the `read:packages` scope.
-2. Add an `.npmrc` to your project:
-
-   ```ini
-   @zied-snoussi:registry=https://npm.pkg.github.com
-   //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-   ```
-
-3. Install:
-
-   ```bash
-   pnpm add @zied-snoussi/ui
-   pnpm add next next-intl next-themes   # only if you use @zied-snoussi/ui/next
-   ```
+```bash
+pnpm add @zied-snoussi/ui            # or: npm i @zied-snoussi/ui / yarn add @zied-snoussi/ui
+pnpm add next next-intl next-themes  # only if you use @zied-snoussi/ui/next
+```
 
 Peer dependencies: `react` and `react-dom` 19; `next` 16, `next-intl` 4 and `next-themes` 0.4 for the Next.js entry point.
 
@@ -167,7 +157,7 @@ Versioning follows [Semantic Versioning](https://semver.org/) and is automated w
 1. In your branch, run `pnpm changeset`, pick `patch` / `minor` / `major` and describe the change. Commit the generated file in `.changeset/`.
 2. Open a pull request. CI must pass.
 3. After merge to `main`, the **Release** workflow opens (or updates) a "Version packages" pull request that bumps the version and writes `CHANGELOG.md`.
-4. Merging that pull request publishes `@zied-snoussi/ui` to GitHub Packages and creates a tagged GitHub Release with the changelog.
+4. Merging that pull request publishes `@zied-snoussi/ui` to npm (with provenance) and creates a tagged GitHub Release with the changelog.
 
 Details: [docs/RELEASING.md](docs/RELEASING.md).
 
@@ -176,7 +166,7 @@ Details: [docs/RELEASING.md](docs/RELEASING.md).
 | Workflow | Trigger | Jobs |
 |---|---|---|
 | `ci.yml` | Pull requests, pushes to `main` | Install (frozen lockfile) → typecheck → lint → library build → package check (`pnpm pack`) → Storybook build → upload artifacts |
-| `release.yml` | Pushes to `main` | Changesets: version PR, or publish to GitHub Packages + GitHub Release |
+| `release.yml` | Pushes to `main` | Changesets: version PR, or publish to npm (provenance) + GitHub Release |
 | `storybook.yml` | Manual / releases | Builds Storybook and deploys it to GitHub Pages (enable Pages first) |
 
 ## Documentation
@@ -190,4 +180,4 @@ Details: [docs/RELEASING.md](docs/RELEASING.md).
 
 ## License
 
-Proprietary. © 2026 Zied Snoussi. All rights reserved. See [LICENSE](LICENSE).
+[MIT](LICENSE) © 2026 Zied Snoussi
