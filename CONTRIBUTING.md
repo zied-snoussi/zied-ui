@@ -7,7 +7,7 @@ pnpm install
 pnpm storybook
 ```
 
-Node.js 20+ and pnpm 10 are required (see `.nvmrc` and `packageManager`).
+Node.js 22+ and pnpm 10 are required (see `.nvmrc` and `packageManager`).
 
 ## Branches and commits
 

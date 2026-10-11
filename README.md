@@ -111,7 +111,7 @@ Merge `@zied-snoussi/ui/messages/<locale>.json` into your app messages so the co
 
 ## Develop locally
 
-Requirements: Node.js 20+, pnpm 10.
+Requirements: Node.js 22+ (see `.nvmrc`), pnpm 10.
 
 ```bash
 pnpm install
