@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, Check, ExternalLink, Github, Lock } from 'lucide-react';
+import { ArrowLeft, Calendar, Check, ExternalLink, GitBranch, Lock } from 'lucide-react';
 import { useRouter } from '@/i18n/routing';
 import { Navbar, Footer } from '@/components/layout';
 import { useTranslations } from 'next-intl';
@@ -83,7 +83,7 @@ export default function ProjectDetailClient({ project, projectId }: ProjectDetai
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-brand-blue/50 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-brand-blue/10"
               >
-                <Github className="h-4 w-4" />
+                <GitBranch className="h-4 w-4" />
                 {t('viewSource')}
               </a>
             ) : (

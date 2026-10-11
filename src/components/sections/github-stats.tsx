@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
     ArrowUpRight, Award, BookMarked, Calendar, CheckCircle2, Eye, FileCode2, GitCommitHorizontal, GitMerge, GitPullRequest,
-    Github, Lock, MapPin, Star, Users,
+    GitBranch, Lock, MapPin, Star, Users,
 } from 'lucide-react';
 import { Fade } from '@/components/shared';
 import { NodeCluster, SectionHeading } from '@/components/ui/circuit';
@@ -383,7 +383,7 @@ export default function GithubStats() {
                                 rel='noopener noreferrer'
                                 className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition-transform hover:-translate-y-0.5'
                             >
-                                <Github className='h-4 w-4' />
+                                <GitBranch className='h-4 w-4' />
                                 {t('viewProfile')}
                             </a>
                         </div>

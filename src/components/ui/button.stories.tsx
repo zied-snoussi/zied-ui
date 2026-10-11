@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { expect, fn, userEvent, within } from 'storybook/test';
-import { ArrowRight, Download, Github } from 'lucide-react';
+import { ArrowRight, Download, GitBranch } from 'lucide-react';
 import { Button } from './button';
 
 const meta = {
@@ -43,7 +43,7 @@ export const Sizes: Story = {
       <Button {...args} size="sm">Small</Button>
       <Button {...args} size="default">Default</Button>
       <Button {...args} size="lg">Large</Button>
-      <Button {...args} size="icon" aria-label="GitHub"><Github /></Button>
+      <Button {...args} size="icon" aria-label="GitHub"><GitBranch /></Button>
     </div>
   ),
 };
@@ -60,7 +60,7 @@ export const WithIcons: Story = {
 export const AsLink: Story = {
   render: (args) => (
     <Button {...args} asChild>
-      <a href="https://github.com/zied-snoussi" target="_blank" rel="noreferrer"><Github /> GitHub</a>
+      <a href="https://github.com/zied-snoussi" target="_blank" rel="noreferrer"><GitBranch /> GitHub</a>
     </Button>
   ),
 };

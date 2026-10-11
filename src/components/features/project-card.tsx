@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { ExternalLink, Github, ArrowRight, Calendar, FolderCode } from 'lucide-react';
+import { ExternalLink, GitBranch, ArrowRight, Calendar, FolderCode } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
@@ -99,7 +99,7 @@ export default function Project({ project, projectId }: ProjectProps) {
                                 rel="noopener noreferrer"
                                 aria-label={t('githubRepository')}
                             >
-                                <Github className="h-3.5 w-3.5" />
+                                <GitBranch className="h-3.5 w-3.5" />
                             </a>
                         </Button>
                     )}
