@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useRef, useState } from 'react';
-import { fn } from 'storybook/test';
+import { expect, fn, screen, userEvent, waitFor, within } from 'storybook/test';
 import { AIChatbot } from './index';
 import { ChatWindow } from './chat-window';
 import { ChatMessage } from './chat-message';
@@ -37,7 +37,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Interactive: Story = {};
+export const Interactive: Story = {
+  parameters: { a11y: { test: 'todo' } }, // known issue (color-contrast), see docs/ACCESSIBILITY.md
+  play: async ({ canvasElement }) => {
+    await userEvent.click(await within(canvasElement).findByRole('button', { name: /AI assistant/i }));
+    const input = await screen.findByRole('textbox');
+    await userEvent.type(input, 'What is your stack?');
+    await userEvent.click(screen.getByRole('button', { name: /send message/i }));
+    await waitFor(() => expect(screen.getByText(/Storybook mock reply/i)).toBeVisible(), { timeout: 5000 });
+  },
+};
 
 function WindowDemo() {
   const [input, setInput] = useState('');
@@ -59,7 +68,11 @@ function WindowDemo() {
   );
 }
 
-export const Window: StoryObj<typeof ChatWindow> = { name: 'ChatWindow', render: () => <WindowDemo /> };
+export const Window: StoryObj<typeof ChatWindow> = {
+  name: 'ChatWindow',
+  render: () => <WindowDemo />,
+  parameters: { a11y: { test: 'todo' } }, // known issue, see docs/ACCESSIBILITY.md
+};
 
 export const Messages: StoryObj<typeof ChatMessage> = {
   name: 'ChatMessage',
@@ -73,7 +86,12 @@ export const Messages: StoryObj<typeof ChatMessage> = {
 
 export const Input: StoryObj<typeof ChatInput> = {
   name: 'ChatInput',
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', a11y: { test: 'todo' } }, // a11y: known issue, see docs/ACCESSIBILITY.md
+  play: async ({ canvasElement }) => {
+    const textbox = within(canvasElement).getByRole('textbox');
+    await userEvent.type(textbox, 'Hello');
+    await expect(textbox).toHaveValue('Hello');
+  },
   render: function Render() {
     const [value, setValue] = useState('');
     return (

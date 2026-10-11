@@ -1,5 +1,9 @@
 # Contributing
 
+## AI agents
+
+Agents follow [AGENTS.md](AGENTS.md); see [docs/AI-WORKFLOW.md](docs/AI-WORKFLOW.md) for the MCP servers and skills.
+
 ## Setup
 
 ```bash
@@ -26,7 +30,8 @@ Node.js 22+ and pnpm 10 are required (see `.nvmrc` and `packageManager`).
    - Labels through next-intl (`useTranslations`) in the Next.js layer; add the keys to `src/messages/{en,fr,ar}.json`.
 3. **Write the story** next to it: `src/components/<layer>/<name>.stories.tsx`:
    - `title: '<Group>/<Name>'`, a `docs.description.component`, `args` for every prop, one story per meaningful state.
-   - Check light and dark, EN / FR / AR, and the Accessibility panel.
+   - Add a `play` function for interactions (see [docs/TESTING.md](docs/TESTING.md)).
+   - Check light and dark, EN / FR / AR, and the Accessibility panel; `pnpm test` must pass.
 4. **Export it** from the right entry in `src/entries/` (index, effects or next).
 5. **Document it** in [docs/COMPONENTS.md](docs/COMPONENTS.md).
 6. Run `pnpm check` and add a changeset (`minor` for a new component).
@@ -34,7 +39,8 @@ Node.js 22+ and pnpm 10 are required (see `.nvmrc` and `packageManager`).
 ## Pull request checklist
 
 - [ ] Story added or updated, renders in light/dark and EN/FR/AR
-- [ ] No new accessibility violations in the a11y panel
+- [ ] `play` interaction test for interactive behavior
+- [ ] `pnpm test` passes (a11y gate is `error`)
 - [ ] Exported from `src/entries/*` if it is part of the package
 - [ ] `docs/COMPONENTS.md` updated
 - [ ] `pnpm check` passes

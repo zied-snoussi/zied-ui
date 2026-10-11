@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, userEvent, within } from 'storybook/test';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs';
 
 const meta = {
@@ -22,4 +23,11 @@ export const Default: Story = {
       <TabsContent value="data" className="text-sm text-muted-foreground">PostgreSQL, dbt, Airflow.</TabsContent>
     </Tabs>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText(/RAG assistants/)).toBeVisible();
+    await userEvent.click(canvas.getByRole('tab', { name: 'Web' }));
+    await expect(canvas.getByRole('tab', { name: 'Web' })).toHaveAttribute('aria-selected', 'true');
+    await expect(canvas.getByText(/Next.js, NestJS, Spring Boot/)).toBeVisible();
+  },
 };

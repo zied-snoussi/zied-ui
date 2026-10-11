@@ -1,0 +1,6 @@
+{
+  "servers": {
+    "storybook": { "type": "http", "url": "http://localhost:6006/mcp" },
+    "shadcn": { "type": "stdio", "command": "npx", "args": ["-y", "shadcn@4.20.1", "mcp"] }
+  }
+}

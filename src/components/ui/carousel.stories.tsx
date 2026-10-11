@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
 
 const meta = {
@@ -27,4 +28,12 @@ export const Gallery: Story = {
       </Carousel>
     </div>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const previous = canvas.getByRole('button', { name: /previous/i });
+    const next = canvas.getByRole('button', { name: /next/i });
+    await waitFor(() => expect(previous).toBeDisabled());
+    await userEvent.click(next);
+    await waitFor(() => expect(previous).toBeEnabled());
+  },
 };

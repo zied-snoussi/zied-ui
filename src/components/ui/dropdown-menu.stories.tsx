@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { expect, screen, userEvent, waitFor, within } from 'storybook/test';
 import { Languages } from 'lucide-react';
 import { Button } from './button';
 import {
@@ -26,4 +27,12 @@ export const Default: Story = {
       </DropdownMenuContent>
     </DropdownMenu>
   ),
+  play: async ({ canvasElement }) => {
+    await userEvent.click(within(canvasElement).getByRole('button', { name: /Language/ }));
+    const menu = await screen.findByRole('menu');
+    await expect(within(menu).getAllByRole('menuitem')).toHaveLength(3);
+    await expect(within(menu).getByRole('menuitem', { name: 'Français' })).toBeVisible();
+    await userEvent.keyboard('{Escape}');
+    await waitFor(() => expect(screen.queryByRole('menu')).not.toBeInTheDocument());
+  },
 };

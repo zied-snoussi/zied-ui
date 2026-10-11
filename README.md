@@ -13,7 +13,9 @@ The component system behind **[zied-snoussi.vercel.app](https://zied-snoussi.ver
 
 - **Package:** `@zied-snoussi/ui`, published on [npm](https://www.npmjs.com/package/@zied-snoussi/ui) (ESM, TypeScript declarations, `"use client"` on every module).
 - **Storybook:** every component with controls, docs, accessibility checks, light/dark themes and EN / FR / AR (RTL).
-- **Releases:** automated with Changesets (semantic versioning, changelog, GitHub Releases).
+- **Tests:** every story runs as a browser test (Vitest + Playwright): render, `play` interactions and axe accessibility checks.
+- **AI-ready:** Storybook MCP server, shadcn MCP, `AGENTS.md` rules and Claude Code skills, so agents can read, build and test components.
+- **Releases:** automated with Changesets (semantic versioning, changelog, GitHub Releases, npm provenance).
 
 ---
 
@@ -25,6 +27,8 @@ The component system behind **[zied-snoussi.vercel.app](https://zied-snoussi.ver
 - [Develop locally](#develop-locally)
 - [Project structure](#project-structure)
 - [Scripts](#scripts)
+- [Testing](#testing)
+- [AI agents and MCP](#ai-agents-and-mcp)
 - [Release process](#release-process)
 - [CI/CD](#cicd)
 - [Documentation](#documentation)
@@ -116,6 +120,8 @@ In Storybook, the toolbar switches the **locale** (EN / FR / AR, RTL) and the **
 ```
 .
 ├── .changeset/              # pending release notes (Changesets)
+├── .claude/skills/          # Claude Code skills (add-component, write-stories, fix-a11y, release)
+├── .mcp.json                # MCP servers for Claude Code (also .cursor/, .vscode/)
 ├── .github/workflows/       # ci.yml, release.yml, storybook.yml
 ├── .storybook/              # Storybook config, providers, API mocks
 ├── docs/                    # architecture, usage, contributing, release guides
@@ -133,6 +139,8 @@ In Storybook, the toolbar switches the **locale** (EN / FR / AR, RTL) and the **
 │   ├── i18n/ lib/ types/    # routing, utils, hooks, types
 │   └── styles/globals.css   # design tokens (source of theme.css)
 ├── stories/                 # MDX docs (Introduction, Getting Started, Foundations) and full page
+├── AGENTS.md / CLAUDE.md    # rules for AI agents
+├── vitest.config.ts         # story tests (Vitest browser mode + Playwright)
 ├── tsup.config.ts           # library build
 └── eslint.config.js
 ```
@@ -147,8 +155,30 @@ In Storybook, the toolbar switches the **locale** (EN / FR / AR, RTL) and the **
 | `pnpm dev` | Library build in watch mode |
 | `pnpm typecheck` | TypeScript, no emit |
 | `pnpm lint` | ESLint (TypeScript, React hooks, Storybook rules) |
-| `pnpm check` | typecheck + lint + build + build-storybook (what CI runs) |
+| `pnpm test` | Story tests in Chromium (render, interactions, a11y) |
+| `pnpm test:coverage` | Same, with a V8 coverage report |
+| `pnpm check` | typecheck + lint + test + build + build-storybook (what CI runs) |
 | `pnpm changeset` | Describe a change for the next release |
+
+## Testing
+
+```bash
+pnpm test             # every story: render + play interactions + accessibility (Chromium)
+pnpm test:coverage    # with coverage report
+```
+
+61 tests today, including interaction tests for buttons, dialogs, sheets, menus, tabs, the carousel, the language switcher, the AI chatbot and the contact form. Details: [docs/TESTING.md](docs/TESTING.md). Known accessibility issues inherited from the portfolio: [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md).
+
+## AI agents and MCP
+
+Run `pnpm storybook`, then open the repo in Claude Code, Cursor or VS Code: the MCP servers are preconfigured (`.mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`).
+
+| Server | What agents can do |
+|---|---|
+| `storybook` (http://localhost:6006/mcp) | read component docs and stories, get story-writing instructions, run tests, get preview URLs |
+| `shadcn` | browse and add shadcn/ui primitives |
+
+Rules for agents: [AGENTS.md](AGENTS.md) (imported by [CLAUDE.md](CLAUDE.md)). Claude Code skills in `.claude/skills/`: `add-component`, `write-stories`, `fix-a11y`, `release`. Guide: [docs/AI-WORKFLOW.md](docs/AI-WORKFLOW.md).
 
 ## Release process
 
@@ -165,7 +195,7 @@ Details: [docs/RELEASING.md](docs/RELEASING.md).
 
 | Workflow | Trigger | Jobs |
 |---|---|---|
-| `ci.yml` | Pull requests, pushes to `main` | Install (frozen lockfile) → typecheck → lint → library build → package check (`pnpm pack`) → Storybook build → upload artifacts |
+| `ci.yml` | Pull requests, pushes to `main` | Typecheck & lint · story tests with coverage (Chromium) · library build, package check and smoke test · Storybook build · artifacts |
 | `release.yml` | Pushes to `main` | Changesets: version PR, or publish to npm (provenance) + GitHub Release |
 | `storybook.yml` | Manual / releases | Builds Storybook and deploys it to GitHub Pages (enable Pages first) |
 
@@ -175,6 +205,9 @@ Details: [docs/RELEASING.md](docs/RELEASING.md).
 - [docs/USAGE.md](docs/USAGE.md): consuming the package in Next.js and plain React apps
 - [docs/COMPONENTS.md](docs/COMPONENTS.md): catalog with props and examples
 - [docs/RELEASING.md](docs/RELEASING.md): versioning, publishing and tokens
+- [docs/TESTING.md](docs/TESTING.md): story tests, interactions, coverage
+- [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md): a11y gate and known issues
+- [docs/AI-WORKFLOW.md](docs/AI-WORKFLOW.md): MCP servers, skills and agent workflow
 - [CONTRIBUTING.md](CONTRIBUTING.md): adding a component, story and docs checklist
 - [CHANGELOG.md](CHANGELOG.md)
 

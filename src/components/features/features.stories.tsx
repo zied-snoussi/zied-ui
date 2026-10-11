@@ -31,5 +31,9 @@ export const Detail: StoryObj<typeof ProjectDetail> = {
   name: 'ProjectDetail (page)',
   render: () => <ProjectDetail project={sample.project} projectId={sample.id} />,
   decorators: [(Story) => <div style={{ maxWidth: 'none' }}><Story /></div>],
-  parameters: { layout: 'fullscreen', docs: { description: { story: 'Full project page: gallery, highlights, stack and links.' } } },
+  parameters: {
+    layout: 'fullscreen',
+    a11y: { test: 'todo' }, // known issue, see docs/ACCESSIBILITY.md
+    docs: { description: { story: 'Full project page: gallery, highlights, stack and links.' } },
+  },
 };
