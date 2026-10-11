@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Typecheck & lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+
+  build:
+    name: Library build & package check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Check package contents
+        run: |
+          pnpm pack --pack-destination ./pack
+          tar -tzf ./pack/*.tgz | sort > pack-files.txt
+          cat pack-files.txt
+          for f in package/dist/index.js package/dist/effects.js package/dist/next.js package/dist/index.d.ts package/dist/theme.css package/dist/messages/en.json; do
+            grep -qx "$f" pack-files.txt || { echo "::error::missing $f in the package"; exit 1; }
+          done
+          for f in dist/index.js dist/effects.js dist/next.js; do
+            head -c 13 "$f" | grep -q '"use client"' || { echo "::error::$f does not start with \"use client\""; exit 1; }
+          done
+      - name: Smoke test (import + server render)
+        run: |
+          cat > smoke.mjs <<'EOF'
+          import { createElement as h } from 'react';
+          import { renderToString } from 'react-dom/server';
+          import { Button, Badge } from './dist/index.js';
+          import { SectionHeading } from './dist/effects.js';
+          const html = renderToString(h('div', null, h(Button, null, 'ok'), h(Badge, null, 'ok'), h(SectionHeading, { index: '01', label: 'a', title: 'b' })));
+          if (!html.includes('<button')) throw new Error('Button did not render');
+          console.log('smoke ok');
+          EOF
+          node smoke.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: pack/*.tgz
+          retention-days: 7
+
+  storybook:
+    name: Storybook build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build-storybook --quiet
+      - uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static
+          retention-days: 7

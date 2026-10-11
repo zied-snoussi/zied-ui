@@ -1,0 +1,402 @@
+{
+    "Common": {
+        "current": "الحالي",
+        "navigation": "التنقل",
+        "toggleMenu": "تبديل القائمة",
+        "viewDetails": "عرض التفاصيل",
+        "liveDemo": "عرض مباشر",
+        "githubRepository": "مستودع GitHub",
+        "scrollToTop": "العودة للأعلى",
+        "educationTimeline": "الجدول الزمني للتعليم",
+        "workTimeline": "الجدول الزمني للخبرة المهنية"
+    },
+    "HomePage": {
+        "title": "مرحباً بك في معرض أعمالي",
+        "description": "أنا مهندس برمجيات متكامل (Full-Stack) متخصص في الذكاء الاصطناعي، أبني منتجات مدعومة بالذكاء الاصطناعي",
+        "heroTitle": "مهندس Full-Stack للذكاء الاصطناعي | وكلاء، RAG و MLOps",
+        "heroSubtitle": "مرحباً، أنا زياد السنوسي. مهندس Full-Stack بخبرة مهنية تزيد عن 3 سنوات، أبني منتجات يعمل فيها الذكاء الاصطناعي بشكل موثوق، مقيم في العوينة، تونس. 📍",
+        "heroDescription": "أسلّم منتجات كاملة: واجهات، واجهات برمجية، بيانات، CI/CD، وميزات ذكاء اصطناعي قابلة للقياس.",
+        "connectWithMe": "تواصل معي",
+        "techStack": "التقنيات المستخدمة",
+        "availableForWork": "متاح للعمل",
+        "location": "العوينة، تونس",
+        "role": "مهندس Full-Stack للذكاء الاصطناعي",
+        "education": "طالب في ESPRIT",
+        "viewProjects": "عرض مشاريعي",
+        "experienceLabel": "الخبرة",
+        "yearsOfEngineering": "سنوات من الهندسة",
+        "yearsExperience": "سنوات من الخبرة",
+        "projectsCompleted": "مشروع منجز",
+        "clientSatisfaction": "رضا العملاء",
+        "greeting": "مرحباً، أنا",
+        "heroIntro": "أبني منتجات Full-Stack وأدمج فيها ذكاءً اصطناعياً موثوقاً: وكلاء LLM و RAG وتقييمات، على Next.js و NestJS و Spring Boot.",
+        "startProject": "ابدأ مشروعاً"
+    },
+    "About": {
+        "title": "عني",
+        "subtitle": "Full-Stack، ذكاء اصطناعي وجودة",
+        "tagline": "أبني منتجات كاملة وأجعل الذكاء الاصطناعي فيها موثوقاً.",
+        "description": "مرحباً، أنا <span_bold>زياد السنوسي</span_bold>، <span_bold>مهندس Full-Stack للذكاء الاصطناعي</span_bold> مقيم في العوينة، تونس، بخبرة مهنية تزيد عن 3 سنوات، وفي السنة الأخيرة من دراسة هندسة البرمجيات في <span_bold>ESPRIT</span_bold>. منذ 2024 أعمل عن بُعد في <span_bold>Bysur</span_bold> (تأمين رقمي) على التحقق من الوثائق بالذكاء الاصطناعي وعلى منصة SaaS متعددة المستأجرين.\n\n<span_bold>🧱 Full-Stack والبنية المعمارية:</span_bold>\n<span_bold>Next.js</span_bold> و <span_bold>React</span_bold> و <span_bold>Angular</span_bold> و <span_bold>Flutter</span_bold> للواجهات؛ <span_bold>NestJS</span_bold> و <span_bold>Node.js</span_bold> و <span_bold>Spring Boot</span_bold> للخوادم، مع <span_bold>PostgreSQL</span_bold> و <span_bold>MongoDB</span_bold> و <span_bold>Redis</span_bold> و <span_bold>Keycloak</span_bold> و <span_bold>Kafka</span_bold>. صممت خدمات مصغرة (Spring Cloud، قاعدة بيانات لكل خدمة) وأنظمة أحادية معيارية في مشاريع أكاديمية وشخصية.\n\n<span_bold>🤖 الذكاء الاصطناعي والوكلاء:</span_bold>\nأستخدم <span_bold>Claude</span_bold> يومياً (<span_bold>Claude Pro</span_bold> و <span_bold>Claude Enterprise</span_bold> و <span_bold>Claude Code</span_bold>) وأتابع دورات Anthropic حول Claude للمؤسسات. أبني وكلاء باستخدام <span_bold>Claude Agent SDK</span_bold> و <span_bold>MCP</span_bold>، ومساعدين بـ <span_bold>LangChain</span_bold> / <span_bold>LangGraph</span_bold> وخطوط <span_bold>RAG</span_bold>، وأقيسها بالتقييمات (<span_bold>RAGAS</span_bold>، اختبارات الطفرات). نماذج محلية ومستضافة عبر <span_bold>Ollama</span_bold> و <span_bold>LiteLLM</span_bold>.\n\n<span_bold>📊 تعلم الآلة و MLOps:</span_bold>\n<span_bold>scikit-learn</span_bold> و <span_bold>XGBoost</span_bold> و <span_bold>Pandas</span_bold> للنماذج؛ <span_bold>MLflow</span_bold> و <span_bold>Prefect</span_bold> و ELK لتتبعها وتشغيلها؛ <span_bold>dbt</span_bold> و <span_bold>Airflow</span_bold> لمستودعات البيانات.\n\n<span_bold>⚙️ DevOps والجودة:</span_bold>\nخطوط <span_bold>Docker</span_bold> و <span_bold>Kubernetes</span_bold> و <span_bold>GitHub Actions</span_bold> و <span_bold>Jenkins</span_bold> مع بوابات جودة <span_bold>SonarQube</span_bold> و <span_bold>Trivy</span_bold> و <span_bold>Playwright</span_bold>، ومراقبة عبر <span_bold>Prometheus</span_bold> و <span_bold>Grafana</span_bold>. أعمل على <span_bold>VS Code</span_bold> و <span_bold>IntelliJ IDEA</span_bold>، مع Git و GitHub.",
+        "highlights": {
+            "cleanCode": {
+                "title": "بنية نظيفة",
+                "description": "شيفرة معيارية، مُنمّطة ومختبرة"
+            },
+            "modernDesign": {
+                "title": "المنتج وتجربة المستخدم",
+                "description": "واجهات سريعة وسهلة الوصول بالعربية والفرنسية والإنجليزية"
+            },
+            "performance": {
+                "title": "DevOps و MLOps",
+                "description": "Docker، Kubernetes، GitHub Actions، Jenkins، MLflow"
+            },
+            "collaboration": {
+                "title": "جودة الذكاء الاصطناعي",
+                "description": "تقييمات (RAGAS)، SonarQube، Trivy، Playwright واختبارات الطفرات"
+            }
+        },
+        "windowPrompt": "من هو زياد؟"
+    },
+    "Education": {
+        "title": "التعليم",
+        "subtitle": "رحلتي الأكاديمية 🎓",
+        "description": "رحلتي الأكاديمية والتعلم المستمر",
+        "items": {
+            "esprit": {
+                "title": "الشهادة الوطنية لمهندس في علوم الإعلامية",
+                "subtitle": "المدرسة العليا الخاصة للهندسة والتكنولوجيا - ESPRIT",
+                "time": "سبتمبر 2023 - الآن",
+                "description": "المهارات: إطار عمل Symfony، Python، PL/SQL، C، Java، Angular، هندسة البرمجيات، الحوسبة السحابية، أنظمة قواعد البيانات المتقدمة، الذكاء الاصطناعي/تعلم الآلة"
+            },
+            "isimsf": {
+                "title": "الإجازة في علوم الإعلامية والملتيميديا",
+                "subtitle": "المعهد العالي للإعلامية والملتيميديا بصفاقس (ISIMS)",
+                "time": "سبتمبر 2020 - يونيو 2023",
+                "description": "المهارات: Unity، Hadoop، Blender، Adobe Photoshop، Adobe Illustrator، الذكاء الاصطناعي، البيانات الضخمة، SOAP، التصميم الجرافيكي، الحوسبة السحابية، Python، Scrum، JEE، C، Java، XML"
+            },
+            "highSchool": {
+                "title": "البكالوريا في علوم الحاسوب",
+                "subtitle": "معهد زوية المقايز الثانوي",
+                "time": "سبتمبر 2015 - يوليو 2020",
+                "description": "إكمال التعليم الثانوي مع التركيز على علوم الحاسوب."
+            },
+            "cesar": {
+                "title": "تدريب في اللغة الفرنسية في مدرسة قيصر",
+                "subtitle": "مدرسة قيصر للغات",
+                "time": "يونيو 2019 - أغسطس 2019",
+                "description": "تحقيق مستوى مقبول من الإتقان في اللغة الفرنسية."
+            }
+        }
+    },
+    "Work": {
+        "title": "الخبرة المهنية",
+        "subtitle": "رحلتي المهنية 💼",
+        "description": "الخبرة المهنية ومعالم المسيرة المهنية",
+        "location": "تونس",
+        "freelance": "عمل حر",
+        "items": {
+            "bysur": {
+                "title": "مطور Full Stack",
+                "company": "Bysur",
+                "time": "نوفمبر 2024 - الآن",
+                "description": "• Bysur Suites (منذ يوليو 2026): دمج منتجات التأمين الخاصة بالشركة في منصة SaaS واحدة متعددة المستأجرين (نظام أحادي معياري بـ NestJS و tRPC و Drizzle و PostgreSQL؛ لوحات تحكم بـ React و Angular).\n• إنشاء مكتبة واجهات مشتركة @bysur ونظام تصميم (Storybook، سجل خاص، إصدارات) تُستخدم في جميع المنتجات.\n• Bysur Verify (Doki): تطوير ميزات منصة SaaS للتحقق من الوثائق بالذكاء الاصطناعي لشركات التأمين باستخدام Next.js و OpenAI: فحص الوثائق بنماذج اللغة، مساحات عمل بصلاحيات حسب الأدوار (RBAC) وإدارة الوثائق.\n• Bysur Cancel: تطوير منتج إلغاء العقود بالكامل داخل monorepo بـ Turborepo، وهو الآن في الإنتاج.\n• نظام CRM للتأمين: تصميم مولّد نماذج ديناميكي بمنطق شرطي وتتبّع الملفات (Payload CMS، React)، مع تكامل الدفع وواجهات برمجية خارجية.\n• تطوير واجهة برمجية معيارية للتأمين بـ NestJS و Drizzle (مصادقة Passport، رسائل بريد بقوالب، اختبارات Jest) وتسليم TheGuestbook، منصة فندقية من 3 تطبيقات (أكثر من 50 نقطة وصول، Stripe، 5 لغات).\n• تحسين أداء تطبيق Assurno المبني بـ React Native / Expo.\n• بوابات جودة في CI (Jenkins، SonarQube، Playwright) وتطوير يومي بمساعدة الذكاء الاصطناعي عبر Claude Code، ضمن فريق يعمل عن بُعد."
+            },
+            "rooly": {
+                "title": "مطور Full Stack",
+                "company": "Rooly",
+                "time": "سبتمبر 2023 - نوفمبر 2024",
+                "description": "• تطوير AD Eyes، منصة لإدارة مزارع الجمبري لشركة Aqua Development Ltd.، بثلاثة تطبيقات حسب الدور: المسؤول (المزارع، المديرون، المعايير، المستلزمات)، مدير المزرعة (الأحواض، برامج التغذية، التقنيون) والتقني (الفحوص اليومية لجودة المياه وصحة الجمبري).\n• الخادم بـ NestJS و MongoDB: 36 وحدة تحكم، 39 مخططاً، JWT، تحديد معدل الطلبات، تخزين مؤقت Redis، تخزين الملفات على AWS S3 ورسائل دعوة بالبريد.\n• الواجهة بـ Next.js 14 كتطبيق ويب قابل للتثبيت (PWA): Redux Toolkit، ApexCharts، Google Maps، حماية CSRF، الإنجليزية / العربية / الكورية.\n• تسليم الموقع التعريفي للعميل (Next.js، Framer Motion، Mapbox).\n• كتابة تقارير أسبوعية وتقنية: PWA على الأجهزة اللوحية، طرق التفويض، ترحيل البيانات، إعادة هيكلة الواجهة."
+            },
+            "msg": {
+                "title": "مطور Full Stack",
+                "company": "Mediterranean Sea Gourmet",
+                "time": "يوليو 2023 - أغسطس 2023",
+                "description": "• تطوير موقع كتالوج وتجارة إلكترونية لمصدّر تونسي للمنتجات الغذائية (أسماك، خضر وغلال) بمفردي، وما زال يعمل ويُصان.\n• جهة العميل: صفحات متعددة اللغات، كتالوج المنتجات والفئات، نماذج الاتصال.\n• لوحة الإدارة: المنتجات، الفئات، المنتجات المميزة، الرسائل، المستخدمون والإعدادات، مع مصادقة JWT.\n• النسخة الأولى بـ React و Node.js و Prisma و PostgreSQL على VPS؛ النسخة الحالية بـ Next.js و MongoDB على Vercel."
+            },
+            "ipLabel": {
+                "title": "متدرب مطور ويب",
+                "company": "ip-label group",
+                "time": "فبراير 2023 - يوليو 2023",
+                "description": "• تطوير منصة داخلية لفريق اختبارات الحمل (Ekara by ip-label): مكتبة مركزية لسكربتات الاختبار مع التحكم في الوصول، تقويم للجدولة، محرر سكربتات وتقارير PDF (React، Redux، Express، Prisma، PostgreSQL).\n• تنفيذ حملات اختبار الحمل بـ k6 و JMeter و Selenium ومتابعة النتائج على Grafana.\n• كتابة أدلة لدمج Selenium في WebLOAD والاستخدام المتقدم لـ JMeter؛ تصميم الواجهات على Figma."
+            },
+            "b2s": {
+                "title": "متدرب مطور ويب",
+                "company": "BUSINESS SOFTWARE SOLUTION (B2S)",
+                "time": "يوليو 2022 - أغسطس 2022",
+                "description": "• تطوير STAR SHOP، موقع تجارة إلكترونية، باستخدام MERN (MongoDB، Express، React، Node.js).\n• مسار طلب كامل: الكتالوج والبحث، السلة، عنوان التوصيل على Google Maps، الدفع عبر PayPal، الفواتير وسجل الطلبات.\n• لوحة إدارة للمنتجات والمستخدمين والطلبات والتوصيلات."
+            }
+        }
+    },
+    "Skills": {
+        "title": "المهارات",
+        "subtitle": "تعرف على مهاراتي وخبراتي!",
+        "techDescription": "التقنيات والأدوات التي أعمل بها",
+        "categories": {
+            "frontend": {
+                "name": "الواجهات والجوال",
+                "description": "واجهات الويب والجوال"
+            },
+            "backend": {
+                "name": "الخوادم",
+                "description": "واجهات برمجية، خدمات، بيانات وأمان"
+            },
+            "machineLearning": {
+                "name": "التعلم الآلي",
+                "description": "مهارات متعلقة بالتعلم الآلي"
+            },
+            "cloud": {
+                "name": "السحابة والبيانات",
+                "description": "الاستضافة والتخزين وهندسة البيانات"
+            },
+            "environment": {
+                "name": "البيئة",
+                "description": "مهارات متعلقة بإعداد وإدارة البيئة"
+            },
+            "devops": {
+                "name": "DevOps والأدوات"
+            },
+            "ai": {
+                "name": "الذكاء الاصطناعي والوكلاء وتعلم الآلة"
+            }
+        },
+        "circuitHint": "اختر فئة، ثم مرّر أو انقر على عقدة لعرض تفاصيلها.",
+        "skillLabel": "المهارة",
+        "categoryLabel": "الفئة",
+        "projectsLabel": "مستخدمة في المشاريع",
+        "moreLabel": "أيضاً في هذه الفئة"
+    },
+    "GithubStats": {
+        "title": "GitHub",
+        "subtitle": "النشاط وطلبات الدمج والشارات",
+        "snapshot": "بيانات بتاريخ {date}",
+        "role": "مهندس Full-Stack للذكاء الاصطناعي",
+        "followers": "المتابعون",
+        "following": "يتابع",
+        "badges": "الشارات",
+        "memberSince": "على GitHub منذ {date}",
+        "viewProfile": "عرض ملف GitHub",
+        "stats": {
+            "contributions": "المساهمات",
+            "contributionsHint": "آخر 12 شهراً",
+            "prs": "طلبات الدمج",
+            "prsHint": "منذ 2020",
+            "merged": "مدمجة",
+            "mergedHint": "نسبة الدمج {percent}%",
+            "reviews": "مراجعات الشيفرة",
+            "reviewsHint": "على طلبات دمج الزملاء",
+            "repos": "المستودعات",
+            "reposHint": "{count} عامة",
+            "stars": "النجوم",
+            "starsHint": "على المستودعات العامة"
+        },
+        "calendar": {
+            "title": "المساهمات خلال السنة الأخيرة",
+            "total": "مساهمة",
+            "tooltip": "{count} مساهمة في {date}",
+            "privateNote": "يشمل العمل الخاص في مستودعات الشركة والفريق",
+            "less": "أقل",
+            "more": "أكثر",
+            "perYear": "المساهمات حسب السنة"
+        },
+        "prs": {
+            "title": "ممارسة طلبات الدمج",
+            "sample": "مقاسة على آخر {count} طلب دمج مدمج",
+            "mergeRate": "نسبة الدمج (كل الطلبات)",
+            "conventional": "عناوين Conventional Commits",
+            "description": "وصف مكتوب",
+            "checks": "فحوصات CI ناجحة",
+            "practices": {
+                "p1": "فرع واحد وطلب دمج واحد لكل تغيير",
+                "p2": "العناوين بصيغة Conventional Commits (feat، fix، refactor…)",
+                "p3": "كل طلب دمج يشرح ما تغيّر وكيف تم التحقق منه",
+                "p4": "الدمج فقط بعد نجاح CI: الاختبارات، التدقيق، فحص الأمان ونشر المعاينة",
+                "p5": "أراجع طلبات دمج زملائي"
+            }
+        },
+        "achievements": {
+            "title": "إنجازات GitHub",
+            "items": {
+                "pullShark": "طلبات دمج تم دمجها",
+                "pairExtraordinaire": "مساهمات مشتركة في طلبات دمج مدمجة",
+                "starstruck": "مستودع حصل على نجوم كثيرة",
+                "galaxyBrain": "الإجابة على النقاشات",
+                "quickdraw": "إغلاق مشكلة أو طلب دمج خلال 5 دقائق",
+                "yolo": "دمج طلب دون مراجعة"
+            }
+        },
+        "languages": {
+            "title": "اللغات",
+            "note": "عبر مستودعاتي الخاصة، العامة والخاصة"
+        },
+        "featured": {
+            "title": "مستودعات المشاريع المميزة",
+            "subtitle": "الشيفرة وراء المشاريع المميزة",
+            "teamNote": "مشاريع الفريق: نصيبي من المساهمات",
+            "privateRepo": "مستودع خاص",
+            "repos": "{count} مستودعات",
+            "commits": "مساهماتي",
+            "commitsValue": "{mine} / {total} ({share}%)",
+            "files": "{count} ملف",
+            "lastActivity": "آخر دفع {date}",
+            "privateRepos": "خاص · {count} مستودعات"
+        }
+    },
+    "Contact": {
+        "title": "تواصل معي",
+        "subtitle": "لنبني شيئًا معًا",
+        "description": "مفتوح للفرص والتعاون. لا تتردد في التواصل!",
+        "emailTitle": "البريد الإلكتروني",
+        "emailDescription": "للاستفسارات عن المشاريع",
+        "phoneTitle": "الهاتف",
+        "phoneDescription": "رد سريع عبر واتساب",
+        "locationTitle": "الموقع",
+        "locationDescription": "مقيم في تونس",
+        "primaryCta": "إرسال بريد",
+        "secondaryCta": "واتساب",
+        "socialConnect": "تواصل عبر وسائل التواصل الاجتماعي",
+        "responseTime": "عادة ما يرد خلال 24 ساعة",
+        "formTitle": "أرسل لي رسالة",
+        "formDescription": "املأ النموذج أدناه وسأعود إليك في أقرب وقت ممكن",
+        "namePlaceholder": "اسمك",
+        "emailPlaceholder": "بريدك الإلكتروني",
+        "subjectPlaceholder": "الموضوع",
+        "messagePlaceholder": "رسالتك...",
+        "sendButton": "إرسال الرسالة",
+        "sending": "جارٍ الإرسال...",
+        "successMessage": "تم إرسال الرسالة بنجاح! سأعود إليك قريبًا.",
+        "errorMessage": "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+        "validation": {
+            "nameMin": "يجب أن يحتوي الاسم على حرفين على الأقل",
+            "nameMax": "يجب ألا يتجاوز الاسم 100 حرف",
+            "nameInvalid": "الاسم يحتوي على أحرف غير صالحة",
+            "emailInvalid": "عنوان البريد الإلكتروني غير صالح",
+            "emailMax": "يجب ألا يتجاوز البريد الإلكتروني 254 حرف",
+            "subjectMin": "يجب أن يحتوي الموضوع على 5 أحرف على الأقل",
+            "subjectMax": "يجب ألا يتجاوز الموضوع 200 حرف",
+            "subjectInvalid": "الموضوع يحتوي على أحرف غير صالحة",
+            "messageMin": "يجب أن تحتوي الرسالة على 20 حرفًا على الأقل",
+            "messageMax": "يجب ألا تتجاوز الرسالة 2000 حرف"
+        },
+        "location": "الموقع",
+        "locationValue": "العوينة، تونس",
+        "email": "البريد الإلكتروني",
+        "emailValue": "ziedalsnoussi@gmail.com",
+        "phone": "الهاتف",
+        "phoneValue": "+216 25 822 514",
+        "sendEmail": "أرسل لي بريدًا إلكترونيًا",
+        "toast": {
+            "sending": "جاري إرسال رسالتك...",
+            "success": "تم إرسال الرسالة بنجاح! 🎉",
+            "successDescription": "سنعود إليك خلال 24 ساعة.",
+            "errorRateLimit": "طلبات كثيرة جدًا",
+            "errorRateLimitDescription": "يرجى المحاولة مرة أخرى بعد {seconds} ثانية.",
+            "errorValidation": "فشل التحقق",
+            "errorValidationDescription": "يرجى التحقق من أخطاء النموذج.",
+            "errorNetwork": "خطأ في الشبكة",
+            "errorNetworkDescription": "يرجى التحقق من اتصالك والمحاولة مرة أخرى.",
+            "errorGeneric": "فشل إرسال الرسالة",
+            "fixFormErrors": "يرجى إصلاح أخطاء النموذج قبل الإرسال"
+        },
+        "secure": "آمن ومحمي من الرسائل المزعجة",
+        "topicsLabel": "ما موضوع رسالتك؟",
+        "topics": {
+            "freelance": "مشروع حر",
+            "job": "وظيفة بدوام كامل",
+            "collab": "تعاون",
+            "hello": "مجرد تحية"
+        },
+        "sendAnother": "إرسال رسالة أخرى"
+    },
+    "Projects": {
+        "title": "معرض الأعمال",
+        "subtitle": "مشاريع مميزة",
+        "description": "كل مشروع هو قطعة تطوير فريدة تعرض مهاراتي وشغفي",
+        "filters": {
+            "all": "الكل",
+            "featured": "مميزة",
+            "web": "تطبيقات ويب",
+            "ai": "ذكاء اصطناعي",
+            "mobile": "موبايل",
+            "data": "بيانات وتعلم آلي"
+        },
+        "count": "{count, plural, one {مشروع واحد} two {مشروعان} few {# مشاريع} many {# مشروعاً} other {# مشروع}}",
+        "selectHint": "اختر مشروعاً لمعاينته",
+        "showMore": "عرض المزيد",
+        "showLess": "عرض أقل"
+    },
+    "Navbar": {
+        "Home": "الرئيسية",
+        "About": "عني",
+        "Projects": "المشاريع",
+        "Education": "التعليم",
+        "Work": "الخبرة",
+        "GitHub Stats": "إحصائيات GitHub",
+        "Skills": "المهارات",
+        "Contact": "تواصل"
+    },
+    "Footer": {
+        "copyright": "حقوق النشر © {year}. جميع الحقوق محفوظة",
+        "description": "مهندس برمجيات يبني خدمات مصغرة قابلة للتوسع ومنتجات مدعومة بالذكاء الاصطناعي.",
+        "location": "تونس",
+        "quickLinks": "روابط سريعة",
+        "connect": "تواصل معي",
+        "madeWith": "صنع بـ",
+        "madeIn": "في تونس",
+        "builtWith": "مبني بـ Next.js و shadcn/ui",
+        "links": {
+            "about": "عني",
+            "projects": "المشاريع",
+            "education": "التعليم",
+            "work": "الخبرة",
+            "skills": "المهارات",
+            "contact": "تواصل"
+        },
+        "ctaButton": "تواصل معي",
+        "followMe": "تابعني",
+        "ctaTitle": "لنبنِ معاً شيئاً رائعاً"
+    },
+    "Metadata": {
+        "title": "زياد السنوسي – مهندس Full-Stack للذكاء الاصطناعي | وكلاء، RAG و MLOps",
+        "description": "مهندس Full-Stack للذكاء الاصطناعي في تونس: منتجات Next.js و NestJS و Spring Boot مع وكلاء LLM (Claude، MCP)، RAG وتقييمات، MLOps و CI/CD. متاح للعمل بدوام كامل أو مستقل.",
+        "keywords": "زياد السنوسي, Zied Snoussi, مهندس ذكاء اصطناعي, Full-Stack AI Engineer, وكلاء LLM, Claude, Claude Code, MCP, RAG, LangChain, LangGraph, MLOps, MLflow, تعلم الآلة, Next.js, NestJS, Spring Boot, TypeScript, Python, Docker, Kubernetes, GitHub Actions, Jenkins, SonarQube, مهندس برمجيات تونس",
+        "author": "زياد السنوسي",
+        "siteTitle": "معرض أعمال زياد السنوسي",
+        "siteName": "زياد السنوسي - مهندس Full-Stack للذكاء الاصطناعي",
+        "ogTitle": "زياد السنوسي – مهندس Full-Stack للذكاء الاصطناعي | وكلاء، RAG و MLOps",
+        "ogDescription": "منتجات Full-Stack بذكاء اصطناعي موثوق: وكلاء Claude و MCP، RAG مع تقييمات، MLOps، على Next.js و NestJS و Spring Boot.",
+        "twitterTitle": "زياد السنوسي – مهندس Full-Stack للذكاء الاصطناعي",
+        "twitterDescription": "مهندس Full-Stack للذكاء الاصطناعي | Claude، وكلاء MCP، RAG وتقييمات | Next.js، NestJS، Spring Boot | Docker، Kubernetes، CI/CD | متاح للفرص"
+    },
+    "ProjectDetail": {
+        "backToProjects": "العودة إلى المشاريع",
+        "liveDemo": "عرض مباشر",
+        "viewSource": "عرض الكود المصدري",
+        "aboutProject": "حول هذا المشروع",
+        "technologiesUsed": "التقنيات المستخدمة",
+        "privateSource": "الشيفرة المصدرية خاصة",
+        "highlights": "أبرز النقاط",
+        "gallery": "لقطات الشاشة"
+    },
+    "Confidential": {
+        "title": "معلومات سرية",
+        "subtitle": "وصول مقيد",
+        "description": "تحتوي هذه الصفحة على معلومات سرية. الوصول مقتصر على الموظفين المصرح لهم فقط.",
+        "accessDenied": "تم رفض الوصول",
+        "securityNotice": "لأسباب أمنية، هذا المحتوى غير متاح للعامة.",
+        "contactInfo": "إذا كنت تعتقد أنه يجب أن يكون لديك حق الوصول إلى هذه الصفحة، يرجى الاتصال بالمسؤول.",
+        "backToHome": "العودة إلى الصفحة الرئيسية"
+    },
+    "AskBot": {
+        "label": "مساعد ذكي",
+        "title": "اسأل مساعدي",
+        "description": "مساعد ذكاء اصطناعي مدرّب على مسيرتي. اسأله أي شيء عن عملي أو تقنياتي أو مدى توفري.",
+        "placeholder": "اسأل شيئاً عن زياد…",
+        "send": "اسأل",
+        "hello": "مرحباً!",
+        "suggestions": {
+            "strengths": "ما هي أبرز نقاط القوة التقنية لدى زياد؟",
+            "microservices": "كيف يتعامل زياد مع الخدمات المصغرة؟",
+            "ai": "ما هي مشاريع الذكاء الاصطناعي التي أنجزها زياد؟"
+        }
+    }
+}

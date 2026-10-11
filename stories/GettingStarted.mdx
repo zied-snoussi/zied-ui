@@ -1,0 +1,92 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started" />
+
+# Getting started
+
+The package is published privately on **GitHub Packages** as `@zied-snoussi/ui`.
+
+## 1. Authenticate to GitHub Packages
+
+Create a GitHub personal access token (classic) with the `read:packages` scope, then add an `.npmrc` next to your app's `package.json`:
+
+```ini
+@zied-snoussi:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+Export the token in your shell (`GITHUB_TOKEN=ghp_...`) or set it as a CI secret. Never commit the token.
+
+## 2. Install
+
+```bash
+pnpm add @zied-snoussi/ui
+# peer dependencies (most apps already have them)
+pnpm add react react-dom
+# only for @zied-snoussi/ui/next
+pnpm add next next-intl next-themes
+```
+
+## 3. Add the styles (Tailwind CSS v4)
+
+In your global stylesheet, import Tailwind first, then the theme. The theme file contains the design tokens (light and dark) and tells Tailwind to scan the package's compiled classes.
+
+```css
+@import "tailwindcss";
+@import "@zied-snoussi/ui/theme.css";
+```
+
+Fonts: the tokens expect `--font-inter` and `--font-jetbrains-mono`. In Next.js, load them with `next/font/google` and set the `variable` option to those names.
+
+## 4. Use the components
+
+```tsx
+import { Button, Card, CardContent, Badge } from '@zied-snoussi/ui';
+import { SectionHeading, Particles, Fade } from '@zied-snoussi/ui/effects';
+
+export function Hero() {
+  return (
+    <Fade bottom>
+      <SectionHeading index="01" label="About" title="Hello" />
+      <Card>
+        <CardContent className="flex gap-2 pt-6">
+          <Badge>RAG</Badge>
+          <Button>Contact me</Button>
+        </CardContent>
+      </Card>
+    </Fade>
+  );
+}
+```
+
+## 5. Next.js components (`@zied-snoussi/ui/next`)
+
+These components use next-intl for their labels and next-themes for the theme toggle.
+
+1. Configure next-intl routing with the locales `en`, `fr` and `ar`.
+2. Merge the package translations into your messages: `@zied-snoussi/ui/messages/en.json` (also `fr.json`, `ar.json`).
+3. Wrap the app:
+
+```tsx
+import { NextIntlClientProvider } from 'next-intl';
+import { ThemeProvider, Navbar, Footer, AIChatbot } from '@zied-snoussi/ui/next';
+
+export default function LocaleLayout({ children, messages, locale }) {
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Navbar />
+        {children}
+        <Footer />
+        <AIChatbot />
+      </ThemeProvider>
+    </NextIntlClientProvider>
+  );
+}
+```
+
+`AIChatbot` posts to `/api/chat` and expects `{ message: string }` back. `askChatbot('question')` opens it from anywhere on the page.
+
+## Client components
+
+Every file in the package starts with `"use client"`, so the components can be imported directly from Server Components in the App Router.

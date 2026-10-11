@@ -1,0 +1,26 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+| Role | Font | Variable | Tailwind |
+|---|---|---|---|
+| Text and headings | Inter | `--font-inter` | `font-sans` |
+| Labels, code, section indexes | JetBrains Mono | `--font-jetbrains-mono` | `font-mono` |
+
+## Inter
+
+<Typeset fontFamily="Inter, sans-serif" fontSizes={[12, 14, 16, 20, 24, 32, 48]} fontWeight={400} sampleText="I ship LLM features to production." />
+
+<Typeset fontFamily="Inter, sans-serif" fontSizes={[24, 32, 48]} fontWeight={700} sampleText="Full-Stack AI Engineer" />
+
+## JetBrains Mono
+
+<Typeset fontFamily="'JetBrains Mono', monospace" fontSizes={[12, 14, 16]} fontWeight={500} sampleText="01 / ABOUT · const stack = ['Next.js', 'NestJS']" />
+
+## Conventions
+
+- Section indexes and labels use `font-mono text-xs uppercase tracking-[0.25em]` (see `SectionHeading`).
+- Body text uses `text-muted-foreground` for secondary information.
+- Arabic switches the document to `dir="rtl"`: prefer logical utilities (`ms-*`, `me-*`, `ps-*`, `pe-*`, `text-start`) over left/right ones.

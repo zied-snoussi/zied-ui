@@ -1,0 +1,402 @@
+{
+    "Common": {
+        "current": "Current",
+        "navigation": "Navigation",
+        "toggleMenu": "Toggle menu",
+        "viewDetails": "View Details",
+        "liveDemo": "Live Demo",
+        "githubRepository": "GitHub Repository",
+        "scrollToTop": "Scroll to top",
+        "educationTimeline": "Education timeline",
+        "workTimeline": "Work experience timeline"
+    },
+    "HomePage": {
+        "title": "Welcome to my Portfolio",
+        "description": "I am a Full-Stack AI Engineer building AI-powered products",
+        "heroTitle": "Full-Stack AI Engineer | Agents, RAG & MLOps",
+        "heroSubtitle": "Hi, I'm Zied Snoussi. A full-stack engineer with 3+ years of professional experience, building products with reliable AI inside them, based in El Aouina, Tunis. 📍",
+        "heroDescription": "I ship complete products: interfaces, APIs, data, CI/CD, and AI features you can measure.",
+        "connectWithMe": "Connect with me",
+        "techStack": "Tech Stack",
+        "availableForWork": "Available for work",
+        "location": "El Aouina, Tunis",
+        "role": "Full-Stack AI Engineer",
+        "education": "ESPRIT Student",
+        "viewProjects": "View My Projects",
+        "experienceLabel": "Experience",
+        "yearsOfEngineering": "Years of Engineering",
+        "yearsExperience": "Years Experience",
+        "projectsCompleted": "Projects Completed",
+        "clientSatisfaction": "Client Satisfaction",
+        "greeting": "Hi, I am",
+        "heroIntro": "I build full-stack products and put reliable AI inside them: LLM agents, RAG and evals, on Next.js, NestJS and Spring Boot.",
+        "startProject": "Start a project"
+    },
+    "About": {
+        "title": "ABOUT",
+        "subtitle": "Full-Stack, AI & Quality",
+        "tagline": "I build complete products and make their AI reliable.",
+        "description": "Hi, I'm <span_bold>Zied Snoussi</span_bold>, a <span_bold>Full-Stack AI Engineer</span_bold> based in El Aouina, Tunis, with 3+ years of professional experience and in the final year of my software engineering degree at <span_bold>ESPRIT</span_bold>. Since 2024 I've worked remotely at <span_bold>Bysur</span_bold> (insurtech), on AI document verification and a multi-tenant SaaS platform.\n\n<span_bold>🧱 Full-stack & architecture:</span_bold>\n<span_bold>Next.js</span_bold>, <span_bold>React</span_bold>, <span_bold>Angular</span_bold> and <span_bold>Flutter</span_bold> on the front; <span_bold>NestJS</span_bold>, <span_bold>Node.js</span_bold> and <span_bold>Spring Boot</span_bold> on the back, with <span_bold>PostgreSQL</span_bold>, <span_bold>MongoDB</span_bold>, <span_bold>Redis</span_bold>, <span_bold>Keycloak</span_bold> and <span_bold>Kafka</span_bold>. I've designed microservices (Spring Cloud, database per service) and modular monoliths in academic and personal projects.\n\n<span_bold>🤖 AI & agents:</span_bold>\nI use <span_bold>Claude</span_bold> every day (<span_bold>Claude Pro</span_bold>, <span_bold>Claude Enterprise</span_bold> and <span_bold>Claude Code</span_bold>) and I'm following Anthropic's courses on Claude for enterprise. I build agents with the <span_bold>Claude Agent SDK</span_bold> and <span_bold>MCP</span_bold>, <span_bold>LangChain</span_bold> / <span_bold>LangGraph</span_bold> assistants and <span_bold>RAG</span_bold> pipelines, and I measure them with evals (<span_bold>RAGAS</span_bold>, mutation testing). Local and hosted models through <span_bold>Ollama</span_bold> and <span_bold>LiteLLM</span_bold>.\n\n<span_bold>📊 Machine learning & MLOps:</span_bold>\n<span_bold>scikit-learn</span_bold>, <span_bold>XGBoost</span_bold> and <span_bold>Pandas</span_bold> for models; <span_bold>MLflow</span_bold>, <span_bold>Prefect</span_bold> and the ELK stack to track and run them; <span_bold>dbt</span_bold> and <span_bold>Airflow</span_bold> for data warehouses.\n\n<span_bold>⚙️ DevOps & quality:</span_bold>\n<span_bold>Docker</span_bold>, <span_bold>Kubernetes</span_bold>, <span_bold>GitHub Actions</span_bold> and <span_bold>Jenkins</span_bold> pipelines with <span_bold>SonarQube</span_bold>, <span_bold>Trivy</span_bold> and <span_bold>Playwright</span_bold> quality gates, monitored with <span_bold>Prometheus</span_bold> and <span_bold>Grafana</span_bold>. I work in <span_bold>VS Code</span_bold> and <span_bold>IntelliJ IDEA</span_bold>, with Git and GitHub.",
+        "highlights": {
+            "cleanCode": {
+                "title": "Clean Architecture",
+                "description": "Modular, typed and tested codebases"
+            },
+            "modernDesign": {
+                "title": "Product & UX",
+                "description": "Fast, accessible interfaces in English, French and Arabic"
+            },
+            "performance": {
+                "title": "DevOps & MLOps",
+                "description": "Docker, Kubernetes, GitHub Actions, Jenkins, MLflow"
+            },
+            "collaboration": {
+                "title": "AI Quality",
+                "description": "Evals (RAGAS), SonarQube, Trivy, Playwright & mutation testing"
+            }
+        },
+        "windowPrompt": "who is zied?"
+    },
+    "Education": {
+        "title": "EDUCATION",
+        "subtitle": "My academic journey 🎓",
+        "description": "My academic journey and continuous learning",
+        "items": {
+            "esprit": {
+                "title": "Engineer's degree, Computer Software Engineering",
+                "subtitle": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+                "time": "Sept. 2023 - Present",
+                "description": "Skills: Symfony Framework, Python, PL/SQL, C, Java, Angular, Architecture Logicielle, Cloud Computing, Advanced Database Systems, AI/ML"
+            },
+            "isimsf": {
+                "title": "Bachelor's degree in Computer Science and Multimedia",
+                "subtitle": "Higher Institute of Computer Science and Multimedia of Sfax (ISIMS)",
+                "time": "Sept. 2020 - June 2023",
+                "description": "Skills: Unity, Hadoop, Blender, Adobe Photoshop, Adobe Illustrator, AI, Big Data, SOAP, Graphic Design, Cloud Computing, Python, Scrum, JEE, C, Java, XML"
+            },
+            "highSchool": {
+                "title": "High School Diploma in Computer Science",
+                "subtitle": "Zaouiet El Meggayez High School",
+                "time": "Sept. 2015 - July 2020",
+                "description": "Completed high school education with a focus on Computer Science."
+            },
+            "cesar": {
+                "title": "French Language Training at Cesar School of Languages",
+                "subtitle": "Cesar School of Languages",
+                "time": "June 2019 - August 2019",
+                "description": "Achieved a passable level of proficiency in the French language."
+            }
+        }
+    },
+    "Work": {
+        "title": "WORK EXPERIENCE",
+        "subtitle": "My professional journey 💼",
+        "description": "Professional experience and career milestones",
+        "location": "Tunisia",
+        "freelance": "Freelance",
+        "items": {
+            "bysur": {
+                "title": "Full Stack Developer",
+                "company": "Bysur",
+                "time": "Nov. 2024 - Present",
+                "description": "• Bysur Suites (since July 2026): integrating the company's insurance products into one multi-tenant SaaS platform (modular monolith with NestJS, tRPC, Drizzle and PostgreSQL; React and Angular consoles).\n• Created the shared @bysur UI library and design system (Storybook, private registry, versioned releases) used across the products.\n• Bysur Verify (Doki): built features of an AI document-verification SaaS for insurers with Next.js and OpenAI: LLM-based document checks, workspaces with role-based access (RBAC) and document management.\n• Bysur Cancel: built the contract-cancellation product end to end in a Turborepo monorepo, now in production.\n• Insurance CRM: designed a dynamic form builder with conditional logic and case-file tracking (Payload CMS, React), with payment and third-party API integrations.\n• Developed a modular NestJS + Drizzle insurance API (Passport auth, templated e-mails, Jest tests) and shipped TheGuestbook, a 3-app hospitality platform (50+ endpoints, Stripe, 5 languages).\n• Improved the performance of the Assurno React Native / Expo app.\n• Quality gates in CI (Jenkins, SonarQube, Playwright) and daily AI-assisted development with Claude Code, in a remote team."
+            },
+            "rooly": {
+                "title": "Full Stack Developer",
+                "company": "Rooly",
+                "time": "Sept. 2023 - Nov. 2024",
+                "description": "• Built AD Eyes, a shrimp-farm management platform for Aqua Development Ltd., with three role-based apps: Admin (farms, managers, parameters, supplies), Farm Manager (ponds, feeding programs, technicians) and Technician (daily checks on water and shrimp health).\n• Backend with NestJS and MongoDB: 36 controllers, 39 schemas, JWT, rate limiting, Redis caching, AWS S3 file storage and invitation e-mails.\n• Frontend with Next.js 14 as an installable web app (PWA): Redux Toolkit, ApexCharts, Google Maps, CSRF protection, English / Arabic / Korean.\n• Delivered the client's corporate website (Next.js, Framer Motion, Mapbox).\n• Wrote weekly and technical reports: PWA for tablets, authorization methods, data migration, front-end refactoring."
+            },
+            "msg": {
+                "title": "Full Stack Developer",
+                "company": "Mediterranean Sea Gourmet",
+                "time": "Jul. 2023 - Aug. 2023",
+                "description": "• Built, on my own, the catalogue and e-commerce website of a Tunisian food exporter (fish, vegetables and fruit), still live and maintained.\n• Customer side: multilingual pages, product catalogue and categories, contact forms.\n• Back office: products, categories, featured products, messages, users and settings, with JWT authentication.\n• First version in React, Node.js, Prisma and PostgreSQL on a VPS; current version in Next.js and MongoDB on Vercel."
+            },
+            "ipLabel": {
+                "title": "Web Developer Intern",
+                "company": "ip-label group",
+                "time": "Feb. 2023 - Jul. 2023",
+                "description": "• Built an internal platform for the load-testing team (Ekara by ip-label): a central library of test scripts with access control, a scheduling calendar, a script editor and PDF reports (React, Redux, Express, Prisma, PostgreSQL).\n• Ran load-testing campaigns with k6, JMeter and Selenium and followed the results in Grafana.\n• Wrote guides on integrating Selenium into WebLOAD and on advanced JMeter use; designed the interfaces in Figma."
+            },
+            "b2s": {
+                "title": "Web Developer Intern",
+                "company": "BUSINESS SOFTWARE SOLUTION (B2S)",
+                "time": "Jul. 2022 - Aug. 2022",
+                "description": "• Built STAR SHOP, an e-commerce website, with the MERN stack (MongoDB, Express, React, Node.js).\n• Full order flow: catalogue and search, cart, shipping address on Google Maps, PayPal payment, invoices and order history.\n• Admin panel for products, users, orders and deliveries."
+            }
+        }
+    },
+    "Skills": {
+        "title": "Skills",
+        "subtitle": "Check out my skills and expertise!",
+        "techDescription": "Technologies and tools I work with",
+        "categories": {
+            "frontend": {
+                "name": "Frontend & Mobile",
+                "description": "Web and mobile interfaces"
+            },
+            "backend": {
+                "name": "Backend",
+                "description": "APIs, services, data and security"
+            },
+            "machineLearning": {
+                "name": "Machine Learning",
+                "description": "Skills related to machine learning"
+            },
+            "cloud": {
+                "name": "Cloud & Data",
+                "description": "Hosting, storage and data engineering"
+            },
+            "environment": {
+                "name": "Environment",
+                "description": "Skills related to environment setup and management"
+            },
+            "devops": {
+                "name": "DevOps & Tools"
+            },
+            "ai": {
+                "name": "AI, Agents & ML"
+            }
+        },
+        "circuitHint": "Pick a category, then hover or tap a node to inspect it.",
+        "skillLabel": "Skill",
+        "categoryLabel": "Category",
+        "projectsLabel": "Used in projects",
+        "moreLabel": "Also in this category"
+    },
+    "GithubStats": {
+        "title": "GitHub",
+        "subtitle": "Activity, pull requests & achievements",
+        "snapshot": "Snapshot of {date}",
+        "role": "Full-Stack AI Engineer",
+        "followers": "Followers",
+        "following": "Following",
+        "badges": "Badges",
+        "memberSince": "On GitHub since {date}",
+        "viewProfile": "View GitHub profile",
+        "stats": {
+            "contributions": "Contributions",
+            "contributionsHint": "Last 12 months",
+            "prs": "Pull requests",
+            "prsHint": "Opened since 2020",
+            "merged": "Merged",
+            "mergedHint": "{percent}% merge rate",
+            "reviews": "Code reviews",
+            "reviewsHint": "On teammates' pull requests",
+            "repos": "Repositories",
+            "reposHint": "{count} public",
+            "stars": "Stars",
+            "starsHint": "On public repositories"
+        },
+        "calendar": {
+            "title": "Contributions in the last year",
+            "total": "contributions",
+            "tooltip": "{count} contributions on {date}",
+            "privateNote": "Includes private work in company and team repositories",
+            "less": "Less",
+            "more": "More",
+            "perYear": "Contributions per year"
+        },
+        "prs": {
+            "title": "Pull request practice",
+            "sample": "Measured on my last {count} merged pull requests",
+            "mergeRate": "Merge rate (all pull requests)",
+            "conventional": "Conventional Commit titles",
+            "description": "Written description",
+            "checks": "Green CI checks",
+            "practices": {
+                "p1": "One branch and one pull request per change",
+                "p2": "Titles follow Conventional Commits (feat, fix, refactor…)",
+                "p3": "Every pull request explains what changed and how it was checked",
+                "p4": "Merged only after CI is green: tests, linting, security scan and preview deploy",
+                "p5": "I review my teammates' pull requests"
+            }
+        },
+        "achievements": {
+            "title": "GitHub achievements",
+            "items": {
+                "pullShark": "Opened pull requests that have been merged",
+                "pairExtraordinaire": "Co-authored commits on merged pull requests",
+                "starstruck": "Created a repository that has many stars",
+                "galaxyBrain": "Answered discussions",
+                "quickdraw": "Closed an issue or pull request within 5 minutes",
+                "yolo": "Merged a pull request without review"
+            }
+        },
+        "languages": {
+            "title": "Languages",
+            "note": "Across my own repositories, public and private"
+        },
+        "featured": {
+            "title": "Featured project repositories",
+            "subtitle": "The code behind the featured projects",
+            "teamNote": "Team projects show my share of commits",
+            "privateRepo": "Private repository",
+            "repos": "{count} repositories",
+            "commits": "My commits",
+            "commitsValue": "{mine} / {total} ({share}%)",
+            "files": "{count} files",
+            "lastActivity": "Last push {date}",
+            "privateRepos": "Private · {count} repositories"
+        }
+    },
+    "Contact": {
+        "title": "CONTACT",
+        "subtitle": "Let's build something together",
+        "description": "Open to opportunities and collaborations. Feel free to reach out!",
+        "emailTitle": "Email",
+        "emailDescription": "For project inquiries",
+        "phoneTitle": "Phone",
+        "phoneDescription": "Quick response via WhatsApp",
+        "locationTitle": "Location",
+        "locationDescription": "Based in Tunisia",
+        "primaryCta": "Send Email",
+        "secondaryCta": "WhatsApp",
+        "socialConnect": "Connect on social media",
+        "responseTime": "Usually responds within 24 hours",
+        "formTitle": "Send me a message",
+        "formDescription": "Fill out the form below and I'll get back to you as soon as possible",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "Your email",
+        "subjectPlaceholder": "Subject",
+        "messagePlaceholder": "Your message...",
+        "sendButton": "Send Message",
+        "sending": "Sending...",
+        "successMessage": "Message sent successfully! I'll get back to you soon.",
+        "errorMessage": "Failed to send message. Please try again.",
+        "validation": {
+            "nameMin": "Name must be at least 2 characters",
+            "nameMax": "Name must not exceed 100 characters",
+            "nameInvalid": "Name contains invalid characters",
+            "emailInvalid": "Invalid email address",
+            "emailMax": "Email must not exceed 254 characters",
+            "subjectMin": "Subject must be at least 5 characters",
+            "subjectMax": "Subject must not exceed 200 characters",
+            "subjectInvalid": "Subject contains invalid characters",
+            "messageMin": "Message must be at least 20 characters",
+            "messageMax": "Message must not exceed 2000 characters"
+        },
+        "location": "Location",
+        "locationValue": "El Aouina, Tunis",
+        "email": "Email",
+        "emailValue": "ziedalsnoussi@gmail.com",
+        "phone": "Phone",
+        "phoneValue": "+216 25 822 514",
+        "sendEmail": "Send Me an Email",
+        "toast": {
+            "sending": "Sending your message...",
+            "success": "Message sent successfully! 🎉",
+            "successDescription": "We'll get back to you within 24 hours.",
+            "errorRateLimit": "Too many requests",
+            "errorRateLimitDescription": "Please try again in {seconds} seconds.",
+            "errorValidation": "Validation failed",
+            "errorValidationDescription": "Please check the form for errors.",
+            "errorNetwork": "Network error",
+            "errorNetworkDescription": "Please check your connection and try again.",
+            "errorGeneric": "Failed to send message",
+            "fixFormErrors": "Please fix the form errors before submitting"
+        },
+        "secure": "Secure & spam-protected",
+        "topicsLabel": "What's it about?",
+        "topics": {
+            "freelance": "Freelance project",
+            "job": "Full-time role",
+            "collab": "Collaboration",
+            "hello": "Just saying hi"
+        },
+        "sendAnother": "Send another message"
+    },
+    "Projects": {
+        "title": "PORTFOLIO",
+        "subtitle": "Featured Projects",
+        "description": "Each project is a unique piece of development showcasing my skills and passion",
+        "filters": {
+            "all": "All",
+            "featured": "Featured",
+            "web": "Web Apps",
+            "ai": "AI",
+            "mobile": "Mobile",
+            "data": "Data & ML"
+        },
+        "count": "{count, plural, one {# project} other {# projects}}",
+        "selectHint": "Select a project to preview it",
+        "showMore": "Show more",
+        "showLess": "Show less"
+    },
+    "Navbar": {
+        "Home": "Home",
+        "About": "About",
+        "Projects": "Projects",
+        "Education": "Education",
+        "Work": "Work",
+        "GitHub Stats": "GitHub Stats",
+        "Skills": "Skills",
+        "Contact": "Contact"
+    },
+    "Footer": {
+        "copyright": "Copyright © {year}. All rights are reserved",
+        "description": "Software Engineer building scalable microservices and AI-powered products.",
+        "location": "Tunisia",
+        "quickLinks": "Quick Links",
+        "connect": "Connect",
+        "madeWith": "Made with",
+        "madeIn": "in Tunisia",
+        "builtWith": "Built with Next.js & shadcn/ui",
+        "links": {
+            "about": "About",
+            "projects": "Projects",
+            "education": "Education",
+            "work": "Work",
+            "skills": "Skills",
+            "contact": "Contact"
+        },
+        "ctaButton": "Get in touch",
+        "followMe": "Follow me",
+        "ctaTitle": "Let's build something great together"
+    },
+    "Metadata": {
+        "title": "Zied Snoussi – Full-Stack AI Engineer | Agents, RAG & MLOps",
+        "description": "Full-Stack AI Engineer in Tunis: Next.js, NestJS and Spring Boot products with LLM agents (Claude, MCP), RAG and evals, MLOps and CI/CD. Open to full-time and freelance roles.",
+        "keywords": "Zied Snoussi, Full-Stack AI Engineer, AI Engineer, Full Stack Developer, LLM Agents, Agentic AI, Claude, Claude Code, MCP, RAG, LangChain, LangGraph, MLOps, MLflow, Machine Learning, Next.js, NestJS, Spring Boot, TypeScript, Python, Docker, Kubernetes, GitHub Actions, Jenkins, SonarQube, Software Engineer Tunisia",
+        "author": "Zied Snoussi",
+        "siteTitle": "Zied Snoussi Portfolio",
+        "siteName": "Zied Snoussi - Full-Stack AI Engineer",
+        "ogTitle": "Zied Snoussi – Full-Stack AI Engineer | Agents, RAG & MLOps",
+        "ogDescription": "Full-stack products with reliable AI inside: Claude & MCP agents, RAG with evals, MLOps, on Next.js, NestJS and Spring Boot.",
+        "twitterTitle": "Zied Snoussi – Full-Stack AI Engineer",
+        "twitterDescription": "Full-Stack AI Engineer | Claude, MCP agents, RAG & evals | Next.js, NestJS, Spring Boot | Docker, Kubernetes, CI/CD | Available for opportunities"
+    },
+    "ProjectDetail": {
+        "backToProjects": "Back to Projects",
+        "liveDemo": "Live Demo",
+        "viewSource": "View Source Code",
+        "aboutProject": "About This Project",
+        "technologiesUsed": "Technologies Used",
+        "privateSource": "Private source code",
+        "highlights": "Highlights",
+        "gallery": "Screenshots"
+    },
+    "Confidential": {
+        "title": "Confidential Information",
+        "subtitle": "Access Restricted",
+        "description": "This page contains confidential information. Access is restricted to authorized personnel only.",
+        "accessDenied": "Access Denied",
+        "securityNotice": "For security reasons, this content is not publicly available.",
+        "contactInfo": "If you believe you should have access to this page, please contact the administrator.",
+        "backToHome": "Back to Home"
+    },
+    "AskBot": {
+        "label": "AI assistant",
+        "title": "Ask my bot",
+        "description": "An AI assistant trained on my experience. Ask it anything about my work, stack or availability.",
+        "placeholder": "Ask something about Zied…",
+        "send": "Ask",
+        "hello": "Hello!",
+        "suggestions": {
+            "strengths": "What are Zied's main technical strengths?",
+            "microservices": "How does Zied approach microservices?",
+            "ai": "Which AI projects has Zied built?"
+        }
+    }
+}

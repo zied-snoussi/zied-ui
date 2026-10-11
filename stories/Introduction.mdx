@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Zied UI
+
+The component system behind [zied-snoussi.vercel.app](https://zied-snoussi.vercel.app), extracted from the portfolio into a documented, versioned library.
+
+**Stack:** React 19 · Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui on Radix UI · Framer Motion · next-intl (EN / FR / AR with RTL) · next-themes.
+
+## What is inside
+
+| Group | What it contains | npm entry point |
+|---|---|---|
+| **UI** | Avatar, Badge, Button, Card, Carousel, Dialog, DropdownMenu, ScrollArea, Separator, Sheet, Tabs | `@zied-snoussi/ui` |
+| **Effects** | Circuit design language (SectionHeading, NodeCluster, Trace), WebGL Particles, 3D DomeGallery, Fade | `@zied-snoussi/ui/effects` |
+| **Shared** | SectionHeader, ScrollToTop | `@zied-snoussi/ui/next` |
+| **Layout** | Navbar, Footer, LanguageSwitcher, ThemeToggle, ThemeProvider | `@zied-snoussi/ui/next` |
+| **Features** | ProjectCard, AI Chatbot (window, messages, input, markdown, robot launcher) | `@zied-snoussi/ui/next` |
+| **Sections** | Home, About, Work, Education, Skills, Projects, GitHub stats, Ask the bot, Contact | Storybook reference only |
+| **Pages** | The full one-page portfolio | Storybook reference only |
+
+## Using this Storybook
+
+- **Locale** toolbar: switch between English, French and Arabic. Arabic switches the page to right-to-left.
+- **Theme** toolbar: light or dark, using the same tokens as the site.
+- **Controls** panel: change component props live.
+- **Accessibility** panel: axe checks for the current story.
+- The `/api/chat` and `/api/contact` routes are mocked, so the chatbot and the contact form work offline.
+
+Next: [Getting started](?path=/docs/getting-started--docs) · [Foundations](?path=/docs/foundations-colors--docs)

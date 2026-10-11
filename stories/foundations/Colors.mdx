@@ -1,0 +1,24 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+All colors are CSS variables defined in `theme.css` (`:root` for light, `.dark` for dark) and exposed to Tailwind through `@theme inline`, so you write `bg-primary`, `text-muted-foreground`, `border-border`, and so on. Swatches show **light / dark**.
+
+<ColorPalette>
+  <ColorItem title="Background" subtitle="bg-background / text-foreground" colors={{ background: 'rgb(247 248 253)', 'background (dark)': 'rgb(5 9 26)', foreground: 'rgb(12 18 44)', 'foreground (dark)': 'rgb(230 235 255)' }} />
+  <ColorItem title="Card & popover" subtitle="bg-card, bg-popover" colors={{ card: 'rgb(255 255 255)', 'card (dark)': 'rgb(10 16 40)' }} />
+  <ColorItem title="Primary" subtitle="bg-primary, ring" colors={{ primary: 'rgb(59 99 246)', 'primary (dark)': 'rgb(96 132 255)', 'primary-foreground': 'rgb(255 255 255)' }} />
+  <ColorItem title="Secondary & muted" subtitle="bg-secondary, bg-muted, text-muted-foreground" colors={{ secondary: 'rgb(238 241 251)', 'secondary (dark)': 'rgb(16 24 54)', 'muted-foreground': 'rgb(88 99 136)', 'muted-foreground (dark)': 'rgb(140 152 196)' }} />
+  <ColorItem title="Accent" subtitle="bg-accent (hover states)" colors={{ accent: 'rgb(230 234 250)', 'accent (dark)': 'rgb(24 34 72)' }} />
+  <ColorItem title="Border & input" subtitle="border-border, border-input" colors={{ border: 'rgb(220 225 242)', 'border (dark)': 'rgb(28 39 80)' }} />
+  <ColorItem title="Destructive" subtitle="bg-destructive" colors={{ destructive: 'rgb(239 68 68)', 'destructive (dark)': 'rgb(248 113 113)' }} />
+  <ColorItem title="Brand" subtitle="text-brand-blue, text-brand-violet, text-brand-cyan" colors={{ blue: 'rgb(59 99 246)', violet: 'rgb(124 77 255)', cyan: 'rgb(8 145 178)', 'cyan (dark)': 'rgb(56 214 240)' }} />
+  <ColorItem title="Trace" subtitle="circuit lines: stroke-trace" colors={{ trace: 'rgb(190 199 232)', 'trace (dark)': 'rgb(44 58 110)' }} />
+  <ColorItem title="Charts" subtitle="chart-1 … chart-5" colors={{ 'chart-1': 'rgb(59 130 246)', 'chart-2': 'rgb(16 185 129)', 'chart-3': 'rgb(249 115 22)', 'chart-4': 'rgb(234 179 8)', 'chart-5': 'rgb(139 92 246)' }} />
+</ColorPalette>
+
+## Radius
+
+`--radius: 0.75rem`. Tailwind exposes `rounded-sm` (radius − 4px), `rounded-md` (− 2px), `rounded-lg` (radius), `rounded-xl` (+ 4px), up to `rounded-4xl` (+ 16px).

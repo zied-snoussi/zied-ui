@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-trace: var(--trace);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* Colors are full CSS colors (not bare "r g b" triples) so Tailwind utilities and opacity modifiers resolve. */
+:root {
+  --radius: 0.75rem;
+  --background: rgb(247 248 253);
+  --foreground: rgb(12 18 44);
+  --card: rgb(255 255 255);
+  --card-foreground: rgb(12 18 44);
+  --popover: rgb(255 255 255);
+  --popover-foreground: rgb(12 18 44);
+  --primary: rgb(59 99 246);
+  --primary-foreground: rgb(255 255 255);
+  --secondary: rgb(238 241 251);
+  --secondary-foreground: rgb(12 18 44);
+  --muted: rgb(238 241 251);
+  --muted-foreground: rgb(88 99 136);
+  --accent: rgb(230 234 250);
+  --accent-foreground: rgb(12 18 44);
+  --destructive: rgb(239 68 68);
+  --border: rgb(220 225 242);
+  --input: rgb(220 225 242);
+  --ring: rgb(59 99 246);
+  --chart-1: rgb(59 130 246);
+  --chart-2: rgb(16 185 129);
+  --chart-3: rgb(249 115 22);
+  --chart-4: rgb(234 179 8);
+  --chart-5: rgb(139 92 246);
+  --sidebar: rgb(247 248 253);
+  --sidebar-foreground: rgb(12 18 44);
+  --sidebar-primary: rgb(59 99 246);
+  --sidebar-primary-foreground: rgb(255 255 255);
+  --sidebar-accent: rgb(238 241 251);
+  --sidebar-accent-foreground: rgb(12 18 44);
+  --sidebar-border: rgb(220 225 242);
+  --sidebar-ring: rgb(59 99 246);
+
+  --brand-blue: rgb(59 99 246);
+  --brand-violet: rgb(124 77 255);
+  --brand-cyan: rgb(8 145 178);
+  --trace: rgb(190 199 232);
+}
+
+.dark {
+  --background: rgb(5 9 26);
+  --foreground: rgb(230 235 255);
+  --card: rgb(10 16 40);
+  --card-foreground: rgb(230 235 255);
+  --popover: rgb(10 16 40);
+  --popover-foreground: rgb(230 235 255);
+  --primary: rgb(96 132 255);
+  --primary-foreground: rgb(255 255 255);
+  --secondary: rgb(16 24 54);
+  --secondary-foreground: rgb(230 235 255);
+  --muted: rgb(16 24 54);
+  --muted-foreground: rgb(140 152 196);
+  --accent: rgb(24 34 72);
+  --accent-foreground: rgb(230 235 255);
+  --destructive: rgb(248 113 113);
+  --border: rgb(28 39 80);
+  --input: rgb(28 39 80);
+  --ring: rgb(96 132 255);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: rgb(10 16 40);
+  --sidebar-foreground: rgb(230 235 255);
+  --sidebar-primary: rgb(96 132 255);
+  --sidebar-primary-foreground: rgb(255 255 255);
+  --sidebar-accent: rgb(24 34 72);
+  --sidebar-accent-foreground: rgb(230 235 255);
+  --sidebar-border: rgb(28 39 80);
+  --sidebar-ring: rgb(96 132 255);
+
+  --brand-blue: rgb(79 124 255);
+  --brand-violet: rgb(146 102 255);
+  --brand-cyan: rgb(56 214 240);
+  --trace: rgb(44 58 110);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--brand-violet) 35%, transparent);
+  }
+}
+
+/* ---------- Circuit / connector design language ---------- */
+
+@utility text-gradient {
+  background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+}
+
+/* Glassy panel used for windows, cards and prompts */
+@utility glass-panel {
+  background: color-mix(in srgb, var(--card) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand-blue) 22%, var(--border));
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, white 3%, transparent) inset,
+    0 24px 60px -24px color-mix(in srgb, var(--brand-blue) 35%, transparent);
+}
+
+/* Soft glow blobs behind sections */
+@utility glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* A signal pulse travelling along an SVG trace */
+.trace-pulse {
+  stroke-dasharray: 10 190;
+  animation: trace-flow 3.2s linear infinite;
+}
+
+@keyframes trace-flow {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
+
+.wave-line {
+  animation: wave-drift 9s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes wave-drift {
+  from { transform: translateX(-2%) scaleY(0.9); }
+  to { transform: translateX(2%) scaleY(1.1); }
+}
+
+.float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.caret-blink {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+.fade-swap {
+  animation: fade-swap 0.5s ease both;
+}
+
+@keyframes fade-swap {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trace-pulse, .wave-line, .float-y, .caret-blink, .fade-swap {
+    animation: none;
+  }
+}
+
+.bot-eyes {
+  transform-origin: 140px 119px;
+  animation: bot-blink 4s infinite;
+}
+
+@keyframes bot-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* ---------- Project card <-> project page morph (see lib/view-transition.ts) ---------- */
+::view-transition-group(project-image),
+::view-transition-group(project-title) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(project-image),
+::view-transition-new(project-image) {
+  /* Keep the screenshot's aspect while the box resizes, instead of stretching it */
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+
+/* Hero portrait orbit */
+.hero-orbit {
+  animation: hero-spin 60s linear infinite;
+}
+
+.hero-orbit-dot {
+  animation: hero-spin 12s linear infinite;
+}
+
+@keyframes hero-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit, .hero-orbit-dot { animation: none; }
+}

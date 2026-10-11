@@ -1,0 +1,141 @@
+{
+  "name": "@zied-snoussi/ui",
+  "version": "1.0.0",
+  "description": "The component system behind zied-snoussi.vercel.app: UI primitives, visual effects, layout, features and page sections, documented in Storybook.",
+  "author": "Zied Snoussi <zied.alsnoussi@gmail.com> (https://zied-snoussi.vercel.app)",
+  "license": "UNLICENSED",
+  "type": "module",
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zied-snoussi/zied-ui.git"
+  },
+  "homepage": "https://github.com/zied-snoussi/zied-ui#readme",
+  "bugs": {
+    "url": "https://github.com/zied-snoussi/zied-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "shadcn-ui",
+    "radix-ui",
+    "storybook",
+    "design-system",
+    "component-library"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./effects": {
+      "types": "./dist/effects.d.ts",
+      "import": "./dist/effects.js"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.js"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./messages/*": "./dist/messages/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "check": "pnpm typecheck && pnpm lint && pnpm build && pnpm build-storybook --quiet",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-scroll-area": "^1.2.10",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@use-gesture/react": "^10.3.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.33.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.563.0",
+    "ogl": "^1.0.11",
+    "react-icons": "5.5.0",
+    "sonner": "^2.0.7",
+    "swr": "^2.4.0",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "next": "^16.0.0",
+    "next-intl": "^4.8.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "3.0.3",
+    "@next/eslint-plugin-next": "16.1.6",
+    "@storybook/addon-a11y": "10.6.0",
+    "@storybook/addon-docs": "10.6.0",
+    "@storybook/addon-themes": "10.6.0",
+    "@storybook/nextjs-vite": "10.6.0",
+    "@tailwindcss/vite": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-storybook": "10.6.0",
+    "next": "16.1.6",
+    "next-intl": "^4.8.2",
+    "next-themes": "^0.4.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remark-gfm": "^4.0.1",
+    "storybook": "10.6.0",
+    "tailwindcss": "^4",
+    "tsup": "8.5.1",
+    "typescript": "^5",
+    "typescript-eslint": "^8",
+    "vite": "^7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@swc/core",
+      "sharp",
+      "@parcel/watcher"
+    ]
+  }
+}
