@@ -1,0 +1,10 @@
+{
+  "name": "zied-ui-mcp",
+  "private": true,
+  "type": "module",
+  "description": "Hosted Storybook MCP server for @zied-snoussi/ui. Reads the manifests published with Storybook on GitHub Pages.",
+  "engines": { "node": "22.x" },
+  "dependencies": {
+    "@storybook/mcp": "10.6.0"
+  }
+}

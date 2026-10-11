@@ -5,7 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import nextPlugin from '@next/eslint-plugin-next';
 
 export default tseslint.config(
-  { ignores: ['dist/**', 'storybook-static/**', 'node_modules/**', '!.storybook'] },
+  { ignores: ['dist/**', 'storybook-static/**', 'node_modules/**', 'mcp/**', '!.storybook'] },
   ...tseslint.configs.recommended,
   ...storybook.configs['flat/recommended'],
   {
