@@ -23,6 +23,10 @@ const cors = {
 
 async function serve(request) {
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
+  // A browser opening /mcp gets the landing page instead of an open event stream.
+  if (request.method === 'GET' && !(request.headers.get('accept') ?? '').includes('text/event-stream')) {
+    return Response.redirect(new URL('/', request.url), 302);
+  }
   const response = await handler(request);
   const headers = new Headers(response.headers);
   for (const [key, value] of Object.entries(cors)) headers.set(key, value);

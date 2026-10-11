@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zied UI MCP</title>
+<meta name="description" content="Public Storybook MCP server for the @zied-snoussi/ui component library.">
+<style>
+  :root { --bg:#ffffff; --fg:#0f172a; --muted:#475569; --card:#f1f5f9; --accent:#0e7490; --border:#e2e8f0; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1120; --fg:#e2e8f0; --muted:#94a3b8; --card:#111827; --accent:#22d3ee; --border:#1f2937; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px; }
+  .label { font: 600 12px/1 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-size: 2rem; margin: .4em 0 .2em; }
+  h2 { font-size: 1.1rem; margin-top: 2em; }
+  p, li { color: var(--muted); }
+  a { color: var(--accent); }
+  pre { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; overflow-x: auto; color: var(--fg); font: 14px/1.5 ui-monospace, monospace; }
+  code { font-family: ui-monospace, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  td { border-top: 1px solid var(--border); padding: 8px 6px; vertical-align: top; }
+  td:first-child { white-space: nowrap; color: var(--fg); font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <div class="label">MCP server</div>
+  <h1>Zied UI · Storybook MCP</h1>
+  <p>Public <a href="https://modelcontextprotocol.io">Model Context Protocol</a> server for the <a href="https://www.npmjs.com/package/@zied-snoussi/ui">@zied-snoussi/ui</a> component library. AI agents use it to read the components, props, stories and docs of the <a href="https://zied-snoussi.github.io/zied-ui/">published Storybook</a> before writing code.</p>
+
+  <h2>Endpoint</h2>
+  <pre>https://zied-ui-mcp.vercel.app/mcp</pre>
+  <p>Streamable HTTP transport. This page is for humans; agents connect to <code>/mcp</code>.</p>
+
+  <h2>Add it to your agent</h2>
+  <p>Claude Code:</p>
+  <pre>claude mcp add --transport http zied-ui https://zied-ui-mcp.vercel.app/mcp</pre>
+  <p>Cursor (<code>.cursor/mcp.json</code>) or VS Code (<code>.vscode/mcp.json</code>, key <code>servers</code>):</p>
+  <pre>{
+  "mcpServers": {
+    "zied-ui": { "url": "https://zied-ui-mcp.vercel.app/mcp" }
+  }
+}</pre>
+
+  <h2>Tools</h2>
+  <table>
+    <tr><td>docs-list</td><td>List every component and docs page.</td></tr>
+    <tr><td>docs-show</td><td>Props, stories and usage of one component.</td></tr>
+    <tr><td>docs-show-story</td><td>One story with its args and code.</td></tr>
+  </table>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href="https://zied-snoussi.github.io/zied-ui/">Storybook</a></li>
+    <li><a href="https://www.npmjs.com/package/@zied-snoussi/ui">npm package</a></li>
+    <li><a href="https://github.com/zied-snoussi/zied-ui">Source on GitHub</a> · <a href="https://github.com/zied-snoussi/zied-ui/blob/main/docs/AI-WORKFLOW.md">AI workflow guide</a></li>
+  </ul>
+</main>
+</body>
+</html>
