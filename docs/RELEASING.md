@@ -46,7 +46,7 @@ The Release workflow checks the token before publishing (step *Check npm account
 | `NPM_TOKEN is invalid or expired (npm whoami failed)` | the secret is not a valid npm token (for example a password) or it expired | create a new granular token, `gh secret set NPM_TOKEN -R zied-snoussi/zied-ui` |
 | `The token belongs to npm user 'X', who does not own the @zied-snoussi scope` | scope not owned by the token's account | create the `zied-snoussi` org on npm, or rename the package to `@X/ui` |
 | `E404 Not Found - PUT …/@zied-snoussi%2fui` | token has no write access to that scope | regenerate with **All packages** + Read and write |
-| `E403 … two-factor authentication` | 2FA required | enable *Bypass 2FA* on the token |
+| `EOTP: This operation requires a one-time password` (or `E403 … two-factor authentication`) | the token was created without *Bypass 2FA* | regenerate the token with **Bypass two-factor authentication** checked, then `gh secret set NPM_TOKEN` again |
 | No "chore: version packages" PR | Actions cannot create PRs | step 4 above |
 
 ## Manual release (fallback)
